@@ -19,8 +19,10 @@ export function HomeCountdown() {
             Ages {eventInfo.ageMin}–{eventInfo.ageMax}
           </Body>
         </div>
-        <Countdown />
-        <Button asChild variant="primary" size="lg" className="shrink-0 self-start lg:self-center">
+        <div className="w-full flex justify-center lg:justify-start">
+          <Countdown />
+        </div>
+        <Button asChild variant="primary" size="lg" className="shrink-0 self-center lg:self-center">
           <Link href="/register">Register & buy jersey</Link>
         </Button>
       </div>

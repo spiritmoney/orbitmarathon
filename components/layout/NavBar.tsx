@@ -28,8 +28,8 @@ export function NavBar() {
   if (isDashboard) return null;
 
   return (
-    <header className="bg-deep-blue text-white">
-      <div className="max-w-[1180px] mx-auto px-4 md:px-8 py-5 flex items-center justify-between">
+    <div className="text-white">
+      <div className="max-w-[1180px] mx-auto px-4 md:px-8 py-4 md:py-5 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
           <BoltMark />
           <Wordmark />
@@ -79,7 +79,7 @@ export function NavBar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={reducedMotion ? undefined : { height: 0, opacity: 0 }}
             transition={transition.fast}
-            className="md:hidden border-t border-white/10 overflow-hidden"
+            className="md:hidden border-t border-white/10 overflow-hidden bg-ink/90 backdrop-blur-md"
             aria-label="Mobile"
           >
             <div className="px-4 py-4 flex flex-col gap-3">
@@ -113,6 +113,6 @@ export function NavBar() {
           </motion.nav>
         )}
       </AnimatePresence>
-    </header>
+    </div>
   );
 }

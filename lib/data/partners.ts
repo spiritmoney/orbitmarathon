@@ -53,12 +53,6 @@ export const partners: SponsorPartner[] = [
     logo: "/media/logos/orbit-ride-gateway.svg",
     logoAlt: "Orbit Ride & Gateway",
   },
-  { name: "Lagos State Sports Commission", tier: "Title" },
-  { name: "GTBank", tier: "Presenting" },
-  { name: "MTN Nigeria", tier: "Official" },
-  { name: "Eko Hotels", tier: "Hospitality" },
-  { name: "Gatorade", tier: "Official" },
-  { name: "Specialized", tier: "Equipment" },
 ];
 
 export const ambassadors = [

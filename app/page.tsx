@@ -11,10 +11,8 @@ import { HomeTravel } from "@/components/marketing/HomeTravel";
 import { HomeFAQ } from "@/components/marketing/HomeFAQ";
 import { HomeCountdown } from "@/components/marketing/HomeCountdown";
 import { PrizePoolSummary } from "@/components/marketing/PrizePoolSummary";
-import { GreenMileCounter } from "@/components/marketing/GreenMileCounter";
 import { RegisterCTA } from "@/components/marketing/RegisterCTA";
 import { AnimateIn } from "@/components/motion/AnimateIn";
-import { VoltSlash } from "@/components/tokens";
 import { eventInfo, heroStats } from "@/lib/data/event";
 import { races } from "@/lib/data/races";
 import { newsArticles } from "@/lib/data/news";
@@ -45,10 +43,6 @@ export default function HomePage() {
       />
 
       <HomeCountdown />
-
-      <GreenMileCounter />
-
-      <VoltSlash variant="divider" />
 
       <section className="py-16 md:py-20 bg-paper-dim">
         <div className="max-w-[1180px] mx-auto px-4 md:px-8">

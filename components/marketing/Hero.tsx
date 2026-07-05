@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Eyebrow, Heading, Body, Stat } from "@/components/tokens";
-import { VoltSlash } from "@/components/tokens/VoltSlash";
-import { MediaAsset } from "@/components/media/MediaAsset";
 import { Stagger, StaggerItem } from "@/components/motion/AnimateIn";
 import { transition } from "@/lib/motion";
 import type { MediaItem } from "@/lib/data/media";
@@ -30,6 +29,7 @@ export function Hero({
   media,
 }: HeroProps) {
   const reducedMotion = useReducedMotion();
+  const imageSrc = media?.type === "video" ? (media.poster ?? media.src) : media?.src;
 
   const textMotion = reducedMotion
     ? {}
@@ -39,19 +39,25 @@ export function Hero({
         transition: { ...transition.base, delay: 0.05 },
       };
 
-  const mediaMotion = reducedMotion
-    ? {}
-    : {
-        initial: { opacity: 0, x: 28, scale: 0.98 },
-        animate: { opacity: 1, x: 0, scale: 1 },
-        transition: { ...transition.slow, delay: 0.15 },
-      };
-
   return (
-    <section className="relative bg-deep-blue text-white overflow-hidden pt-16 md:pt-24 pb-0">
-      <VoltSlash variant="mask" />
-      <div className="relative z-10 max-w-[1180px] mx-auto px-4 md:px-8 grid md:grid-cols-[1fr_1.35fr] gap-6 md:gap-8 items-end">
-        <motion.div {...textMotion}>
+    <section className="relative -mt-[6.75rem] pt-[6.75rem] bg-deep-blue text-white overflow-hidden min-h-[min(92vh,880px)] flex flex-col justify-end">
+      {media && imageSrc && (
+        <div className="absolute inset-0" aria-hidden="true">
+          <Image
+            src={imageSrc}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[center_42%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/75 to-ink/25 md:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
+        </div>
+      )}
+
+      <div className="relative z-10 max-w-[1180px] mx-auto px-4 md:px-8 w-full pt-8 md:pt-12 pb-6 flex-1 flex flex-col justify-center">
+        <motion.div {...textMotion} className="max-w-xl md:max-w-2xl">
           <Eyebrow variant="sun" className="mb-4">
             {eyebrow}
           </Eyebrow>
@@ -72,25 +78,11 @@ export function Hero({
             )}
           </div>
         </motion.div>
-
-        {media && (
-          <motion.div
-            className="relative w-full aspect-[4/3] min-h-[360px] sm:min-h-[400px] md:aspect-auto md:min-h-[520px] lg:min-h-[600px] md:h-[min(72vh,640px)] mb-6 md:mb-0 rounded-sm overflow-hidden border border-white/10 shadow-2xl shadow-ink/30"
-            {...mediaMotion}
-          >
-            <MediaAsset
-              item={media}
-              priority
-              autoplay={media.type === "video"}
-              sizes="(max-width: 768px) 100vw, 58vw"
-              showCaption
-            />
-          </motion.div>
-        )}
       </div>
-      <div className="relative z-10 max-w-[1180px] mx-auto px-4 md:px-8">
+
+      <div className="relative z-10 max-w-[1180px] mx-auto px-4 md:px-8 w-full pb-10">
         <Stagger
-          className="flex flex-wrap gap-6 md:gap-9 mt-12 md:mt-14 pb-10"
+          className="flex flex-wrap gap-6 md:gap-9"
           stagger={0.08}
           trigger="mount"
         >
@@ -101,6 +93,10 @@ export function Hero({
           ))}
         </Stagger>
       </div>
+
+      {media && (
+        <span className="sr-only">{media.alt}</span>
+      )}
     </section>
   );
 }

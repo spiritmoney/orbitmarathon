@@ -16,9 +16,11 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <UtilityBar />
-      <NavBar />
-      <main className="flex-1">{children}</main>
+      <header className="fixed top-0 inset-x-0 z-50 bg-ink/70 backdrop-blur-md border-b border-white/10">
+        <UtilityBar />
+        <NavBar />
+      </header>
+      <main className="flex-1 pt-[6.75rem]">{children}</main>
       <Footer />
       <WhatsAppButton />
     </>

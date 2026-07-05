@@ -32,7 +32,7 @@ export function Countdown() {
 
   if (!timeLeft) {
     return (
-      <p className="font-display text-2xl md:text-3xl uppercase text-volt">
+      <p className="font-display text-2xl md:text-3xl uppercase text-volt text-center">
         Race week is here
       </p>
     );
