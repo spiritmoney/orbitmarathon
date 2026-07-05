@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Orbit Marathon",
   },
   description:
-    "180km cycling + 42.2km marathon endurance event in Lagos. Coastal 180, Marathon 42, and Duo Orbit relay.",
+    "Orbit Marathon by Orbit Ride & Gateway — free registration, mandatory official jersey, ₦50M prize pool. Coastal 180, Marathon 42, and Duo Orbit in Lagos.",
 };
 
 export default function RootLayout({

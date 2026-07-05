@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { waveSchema, type WaveFormData } from "@/lib/schemas/registration";
 import { saveRegistrationData } from "@/lib/registration-store";
 import { races } from "@/lib/data/races";
+import { eventInfo } from "@/lib/data/event";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Heading, Body } from "@/components/tokens";
@@ -61,8 +62,9 @@ export function WaveSelector({ defaultWave }: WaveSelectorProps) {
                 {race.name}
               </Heading>
               <Body muted className="mt-2 text-sm">{race.description}</Body>
-              <p className="mt-3 font-display text-xl text-sapphire">
-                ₦{race.price.toLocaleString()}
+              <p className="mt-3 font-display text-xl text-sapphire">Free entry</p>
+              <p className="text-xs text-ink/50 mt-1">
+                + ₦{eventInfo.jerseyPrice.toLocaleString()} official jersey (required)
               </p>
             </label>
           ))}

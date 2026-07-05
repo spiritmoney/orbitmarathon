@@ -16,13 +16,13 @@ export function RegisterCTA() {
             Do not be left out of history
           </Heading>
           <Body className="text-tint-blue mt-3 max-w-md">
-            12,000 athletes. Six continents. One finish line on the Lagos coast.
+            Free registration. Mandatory official jersey. ₦50M in prizes. Join the Orbit community.
           </Body>
         </AnimateIn>
         <AnimateIn variant="slideFromRight" delay={0.1}>
           <div className="flex flex-wrap gap-3 shrink-0">
             <Button asChild variant="primary" size="lg">
-              <Link href="/register">Register now</Link>
+              <Link href="/register">Register & buy jersey</Link>
             </Button>
             <Button asChild variant="outline">
               <Link href="/contact">Contact us</Link>

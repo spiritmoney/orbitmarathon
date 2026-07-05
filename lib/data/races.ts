@@ -29,7 +29,7 @@ export const races: Race[] = [
     elevation: "1,340 m gain",
     cutoff: "10 hours",
     startTime: "06:00 WAT",
-    price: 85000,
+    price: 0,
     currency: "NGN",
     highlights: [
       "Closed roads from Victoria Island to Epe",
@@ -47,6 +47,7 @@ export const races: Race[] = [
       { km: 160, name: "Stadium Approach", services: ["Water", "Electrolytes"] },
     ],
     rules: [
+      { title: "Age eligibility", content: "Runners must be between 18 and 50 years old. Valid government-issued ID required at kit collection." },
       { title: "Equipment", content: "Road bikes only. Helmets mandatory at all times." },
       { title: "Cutoff", content: "Riders must reach halfway village within 5 hours." },
       { title: "Drafting", content: "Drafting permitted in open wave only." },
@@ -63,7 +64,7 @@ export const races: Race[] = [
     elevation: "210 m gain",
     cutoff: "6 hours",
     startTime: "06:30 WAT",
-    price: 45000,
+    price: 0,
     currency: "NGN",
     highlights: [
       "IAAF-certified course",
@@ -80,6 +81,7 @@ export const races: Race[] = [
       { km: 40, name: "Stadium Gate", services: ["Water", "Electrolytes"] },
     ],
     rules: [
+      { title: "Age eligibility", content: "Runners must be between 18 and 50 years old. Valid government-issued ID required at kit collection." },
       { title: "Qualification", content: "Sub-4:30 marathon or coach recommendation required for elite wave." },
       { title: "Pacing", content: "Official pacers available for 3:00, 3:30, and 4:00 targets." },
       { title: "Cutoff", content: "30km cutoff at 4 hours 30 minutes." },
@@ -96,7 +98,7 @@ export const races: Race[] = [
     elevation: "1,550 m gain",
     cutoff: "12 hours",
     startTime: "06:00 WAT",
-    price: 95000,
+    price: 0,
     currency: "NGN",
     highlights: [
       "Two athletes, one finish line",
@@ -110,6 +112,7 @@ export const races: Race[] = [
       { km: 222, name: "Joint Finish", services: ["Medals", "Photos"] },
     ],
     rules: [
+      { title: "Age eligibility", content: "All team members must be between 18 and 50 years old. Valid government-issued ID required at kit collection." },
       { title: "Team composition", content: "Exactly two athletes per team. One rider, one runner." },
       { title: "Hand-off", content: "Chip exchange must occur within the designated 200m zone." },
       { title: "Timing", content: "Team time starts at rider start and ends at runner finish." },
@@ -124,10 +127,3 @@ export function getRaceBySlug(slug: string): Race | undefined {
 export function getRaceById(id: WaveId): Race | undefined {
   return races.find((r) => r.id === id);
 }
-
-export const homeStats = [
-  { value: "42.2", label: "KM run leg" },
-  { value: "180", label: "KM ride leg" },
-  { value: "12K", label: "Athletes" },
-  { value: "06", label: "Continents" },
-];

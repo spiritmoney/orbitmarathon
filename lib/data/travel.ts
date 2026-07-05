@@ -49,7 +49,7 @@ export const travelHotels: TravelHotel[] = [
 
 export const storyHighlights = {
   history:
-    "Founded in Lagos in 2023, Orbit Marathon grew from 2,000 athletes to 12,000 in three years — riders and runners from six continents on one coastal circuit.",
+    "The Orbit Marathon is the ultimate expression of the Orbit lifestyle. Just as Orbit Ride & Gateway redefines urban mobility through smart, eco-friendly transit, this marathon challenges you to push your personal boundaries. Whether you are a seasoned elite athlete or a weekend warrior, this is your platform to showcase endurance, community spirit, and the Nigerian drive for excellence.",
   sustainability:
-    "Cup-free aid stations, local waste recycling partners, and offset travel emissions. Race kit uses recycled materials where feasible.",
+    "Aligned with Orbit Ride & Gateway, we champion health and local innovation — cup-free aid stations, local waste recycling partners, and offset travel emissions. Race kit uses recycled materials where feasible.",
 };

@@ -18,7 +18,7 @@ export const detailsSchema = z.object({
 });
 
 export const kitSchema = z.object({
-  jerseySize: z.enum(["XS", "S", "M", "L", "XL", "XXL"], {
+  jerseySize: z.enum(["S", "M", "L", "XL", "XXL"], {
     message: "Select a jersey size",
   }),
   transportPackage: z.boolean(),
@@ -26,7 +26,7 @@ export const kitSchema = z.object({
 });
 
 export const paymentSchema = z.object({
-  paymentMethod: z.enum(["card", "bank"], {
+  paymentMethod: z.enum(["card", "bank", "orbit-wallet"], {
     message: "Select a payment method",
   }),
   agreeTerms: z.boolean().refine((val) => val === true, {

@@ -14,6 +14,8 @@ export interface RegistrationData {
   transportPackage?: boolean;
   merchBundle?: boolean;
   paymentMethod?: string;
+  runnerId?: string;
+  fastTrack?: boolean;
   agreeTerms?: boolean;
 }
 

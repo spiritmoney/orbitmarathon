@@ -1,23 +1,23 @@
 /** Top questions surfaced on the home page — full list lives on /faq */
 export const homeFaqItems = [
   {
-    question: "What time does the race start?",
+    question: "What is the age limit?",
     answer:
-      "Coastal 180 and Duo Orbit start at 06:00 WAT. Marathon 42 starts at 06:30 WAT. Arrive 90 minutes early.",
+      "Strictly 18–50 years. Present a valid government-issued ID during kit collection for age verification.",
   },
   {
-    question: "Where is the start line?",
+    question: "What is included in the race kit?",
     answer:
-      "Teslim Balogun Stadium, Surulere, Lagos. Shuttles run from partner hotels from 04:00.",
+      "Your kit includes a personalized race bib, timing chip, and a mandatory official Orbit Marathon jersey (₦10,000). Registration itself is free.",
   },
   {
-    question: "Can I change my wave after registering?",
+    question: "What medical support is on course?",
     answer:
-      "Yes, until September 15 subject to availability. Contact support with your registration ID.",
+      "Medical teams are stationed every 2km along the route and at the finish line.",
   },
   {
-    question: "Do I need a visa to visit Nigeria?",
+    question: "How do I register?",
     answer:
-      "Most international athletes require a visa. Invitation letters provided upon registration confirmation.",
+      "Registration is free. Select your wave, choose your jersey size, and complete checkout for the required ₦10,000 official jersey via Paystack or Flutterwave.",
   },
 ];

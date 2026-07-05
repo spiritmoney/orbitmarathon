@@ -15,6 +15,7 @@ const footerColumns = [
     title: "Compete",
     links: [
       { href: "/register", label: "Register" },
+      { href: "/awards", label: "Awards & prizes" },
       { href: "/results", label: "Results" },
       { href: "/results/live", label: "Leaderboard" },
       { href: "/athletes/dashboard", label: "Dashboard" },
@@ -79,10 +80,10 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <BoltMark className="w-4 h-5" />
             <span>
-              <strong className="text-white font-bold">Orbit Marathon</strong> — Lagos City Cycling Marathon
+              <strong className="text-white font-bold">Orbit Marathon</strong> — by Orbit Ride & Gateway
             </span>
           </div>
-          <p>05–12 October 2026 · Deep Blue dominant · Volt cuts sparingly</p>
+          <p>05–12 October 2026 · Lagos, Nigeria</p>
         </div>
       </div>
     </footer>

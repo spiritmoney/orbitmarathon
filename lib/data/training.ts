@@ -5,6 +5,7 @@ export interface TrainingArticle {
   readTime: string;
   category: string;
   body: string;
+  pdfPath?: string;
 }
 
 export const trainingArticles: TrainingArticle[] = [
@@ -15,6 +16,7 @@ export const trainingArticles: TrainingArticle[] = [
     readTime: "8 min",
     category: "Cycling",
     body: "The Coastal 180 demands sustained power output over 6–10 hours. This guide covers base building, nutrition strategy, and taper protocols specific to the Lagos coastal profile.\n\nWeeks 1–8 focus on aerobic base with long rides building to 120km. Weeks 9–14 introduce race-pace intervals and heat acclimatization. The final two weeks taper volume while maintaining intensity.",
+    pdfPath: "/media/plans/coastal-180-plan.pdf",
   },
   {
     slug: "marathon-heat-acclimation",
@@ -23,6 +25,7 @@ export const trainingArticles: TrainingArticle[] = [
     readTime: "6 min",
     category: "Running",
     body: "Lagos in October averages 31°C with high humidity. Start heat acclimation at least 14 days before race day.\n\nIncorporate easy runs in warm conditions, increase electrolyte intake, and practice your race-day hydration plan during long runs.",
+    pdfPath: "/media/plans/marathon-heat-plan.pdf",
   },
   {
     slug: "duo-orbit-transition",
@@ -31,6 +34,7 @@ export const trainingArticles: TrainingArticle[] = [
     readTime: "5 min",
     category: "Relay",
     body: "The hand-off at halfway village is timed and broadcast live. Practice chip exchange, gear swap, and runner warm-up in a single fluid sequence.\n\nAssign clear roles: one athlete manages timing chip, the other prepares for their leg. Rehearse at least twice before race day.",
+    pdfPath: "/media/plans/duo-orbit-transition.pdf",
   },
 ];
 

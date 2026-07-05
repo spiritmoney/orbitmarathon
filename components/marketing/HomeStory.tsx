@@ -26,7 +26,7 @@ export function HomeStory({ media }: HomeStoryProps) {
           />
         </AnimateIn>
         <AnimateIn variant="slideFromRight" delay={0.1} className="order-1 md:order-2">
-          <SectionHeader eyebrow="Our story" title="Built in Lagos" align="left" />
+          <SectionHeader eyebrow="Orbit Ride & Gateway" title="The Orbit lifestyle" align="left" />
           <Body className="mb-6">{storyHighlights.history}</Body>
           <div className="bg-tint-green border border-forest/20 p-5 mb-6">
             <Heading as="h3" size="md" className="normal-case text-xl mb-2">

@@ -28,6 +28,7 @@
 
   --animate-accordion-down: accordion-down 0.25s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-partner-marquee: partner-marquee 38s linear infinite;
 }
 
 html {
@@ -71,4 +72,17 @@ body {
   to {
     height: 0;
   }
+}
+
+@keyframes partner-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partner-marquee-track:hover {
+  animation-play-state: paused;
 }

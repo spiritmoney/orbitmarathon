@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { ArticleBody } from "@/components/content/ArticleBody";
+import { Button } from "@/components/ui/button";
 import { getTrainingBySlug, trainingArticles } from "@/lib/data/training";
 
 export async function generateStaticParams() {
@@ -29,6 +31,13 @@ export default async function TrainingArticlePage({
 
   return (
     <div className="max-w-[1180px] mx-auto px-4 md:px-8 py-12">
+      {article.pdfPath && (
+        <Button asChild variant="primary" className="mb-8">
+          <Link href={article.pdfPath} download>
+            Download PDF training plan
+          </Link>
+        </Button>
+      )}
       <ArticleBody
         title={article.title}
         date="2026-06-01"

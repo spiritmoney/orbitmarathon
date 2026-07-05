@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Orbit Marathon" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Orbit Marathon — Duo Orbit</name>
+    <desc>Full relay course: 180km ride + 42.2km run</desc>
+  </metadata>
+  <trk>
+    <name>Duo Orbit — Ride leg</name>
+    <trkseg>
+      <trkpt lat="6.4281" lon="3.4219"><ele>12</ele></trkpt>
+      <trkpt lat="6.4474" lon="3.4739"><ele>78</ele></trkpt>
+      <trkpt lat="6.4950" lon="3.5800"><ele>142</ele></trkpt>
+      <trkpt lat="6.5300" lon="3.7200"><ele>148</ele></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Duo Orbit — Run leg</name>
+    <trkseg>
+      <trkpt lat="6.5300" lon="3.7200"><ele>142</ele></trkpt>
+      <trkpt lat="6.4580" lon="3.4900"><ele>35</ele></trkpt>
+      <trkpt lat="6.4965" lon="3.3428"><ele>10</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

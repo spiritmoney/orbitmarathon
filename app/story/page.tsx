@@ -1,7 +1,7 @@
 import { Hero } from "@/components/marketing/Hero";
 import { SectionHeader } from "@/components/marketing/SectionHeader";
 import { Body } from "@/components/tokens";
-import { homeStats } from "@/lib/data/races";
+import { aboutMarathon, heroStats } from "@/lib/data/event";
 import { storyHighlights } from "@/lib/data/travel";
 import { storyMedia } from "@/lib/data/media";
 import { VoltSlash } from "@/components/tokens";
@@ -13,18 +13,18 @@ export default function StoryPage() {
   return (
     <>
       <Hero
-        eyebrow="Since 2023"
-        title="Do not be left out of history"
-        description="Orbit Marathon began as a bold idea: what if cyclists and marathoners shared one course, one community, one finish line on the Lagos coast?"
-        primaryCta={{ href: "/register", label: "Join us" }}
-        stats={homeStats.slice(0, 3)}
+        eyebrow="Orbit Ride & Gateway"
+        title="The ultimate expression of the Orbit lifestyle"
+        description={aboutMarathon}
+        primaryCta={{ href: "/register", label: "Register & buy jersey" }}
+        stats={heroStats.slice(0, 3)}
         media={storyMedia}
       />
       <VoltSlash variant="divider" />
       <div className="max-w-[1180px] mx-auto px-4 md:px-8 py-16 space-y-12">
         <section>
-          <SectionHeader title="Our history" align="left" />
-          <Body>{storyHighlights.history}</Body>
+          <SectionHeader title="About us" align="left" />
+          <Body>{aboutMarathon}</Body>
         </section>
         <section>
           <SectionHeader title="Sustainability" align="left" />

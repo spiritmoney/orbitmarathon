@@ -1,6 +1,7 @@
 import { Hero } from "@/components/marketing/Hero";
 import { SectionHeader } from "@/components/marketing/SectionHeader";
 import { CardGrid } from "@/components/marketing/CardGrid";
+import { OfficialPartnership } from "@/components/marketing/OfficialPartnership";
 import { PartnerStrip } from "@/components/marketing/PartnerStrip";
 import { NewsTeaser } from "@/components/marketing/NewsTeaser";
 import { MediaShowcase } from "@/components/marketing/MediaShowcase";
@@ -8,10 +9,14 @@ import { HomeStory } from "@/components/marketing/HomeStory";
 import { HomeCoursePreview } from "@/components/marketing/HomeCoursePreview";
 import { HomeTravel } from "@/components/marketing/HomeTravel";
 import { HomeFAQ } from "@/components/marketing/HomeFAQ";
+import { HomeCountdown } from "@/components/marketing/HomeCountdown";
+import { PrizePoolSummary } from "@/components/marketing/PrizePoolSummary";
+import { GreenMileCounter } from "@/components/marketing/GreenMileCounter";
 import { RegisterCTA } from "@/components/marketing/RegisterCTA";
 import { AnimateIn } from "@/components/motion/AnimateIn";
 import { VoltSlash } from "@/components/tokens";
-import { homeStats, races } from "@/lib/data/races";
+import { eventInfo, heroStats } from "@/lib/data/event";
+import { races } from "@/lib/data/races";
 import { newsArticles } from "@/lib/data/news";
 import {
   heroMedia,
@@ -24,20 +29,24 @@ export default function HomePage() {
   return (
     <>
       <Hero
-        eyebrow="05 — 12 October · Lagos Coastal Circuit"
+        eyebrow={`${eventInfo.dateLabel} · ${eventInfo.parentBrand}`}
         title={
           <>
-            Outrun
+            The Orbit
             <br />
-            the <em className="text-sun not-italic">horizon</em>
+            <em className="text-sun not-italic">lifestyle</em> in motion
           </>
         }
-        description="One course, two disciplines, zero limits. Orbit Marathon fuses road cycling and marathon endurance into a single continuous event for riders and runners chasing the same finish line."
-        primaryCta={{ href: "/register", label: "Register now" }}
-        secondaryCta={{ href: "#course", label: "Explore the course" }}
-        stats={homeStats}
+        description="More than a race — a lifestyle event from Orbit Ride & Gateway. Push your limits, join the community, and showcase the Nigerian drive for excellence on the Lagos coastal circuit."
+        primaryCta={{ href: "/register", label: "Register & buy jersey" }}
+        secondaryCta={{ href: "/awards", label: "View prize pool" }}
+        stats={heroStats}
         media={heroMedia}
       />
+
+      <HomeCountdown />
+
+      <GreenMileCounter />
 
       <VoltSlash variant="divider" />
 
@@ -56,6 +65,8 @@ export default function HomePage() {
 
       <MediaShowcase items={slideshowMedia} />
 
+      <PrizePoolSummary />
+
       <div id="course">
         <HomeCoursePreview media={courseMedia} />
       </div>
@@ -71,6 +82,8 @@ export default function HomePage() {
       <HomeFAQ />
 
       <RegisterCTA />
+
+      <OfficialPartnership />
     </>
   );
 }

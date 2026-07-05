@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" role="img" aria-label="Orbit Ride and Gateway">
+  <rect width="280" height="80" rx="4" fill="#FBFAF4"/>
+  <path
+    d="M20 56 L20 20 L36 20 L36 40 L52 20 L72 20 L48 44 L76 56 L56 56 L36 36 L36 56 Z"
+    fill="#0A1B9B"
+  />
+  <path
+    d="M58 14 L14 48 L40 48 L28 66 L66 34 L42 34 Z"
+    fill="#A4E134"
+    transform="translate(6, 4) scale(0.55)"
+  />
+  <text x="88" y="36" fill="#0A1B9B" font-family="Arial, sans-serif" font-size="14" font-weight="700">ORBIT RIDE</text>
+  <text x="88" y="54" fill="#283CCD" font-family="Arial, sans-serif" font-size="11" font-weight="600">&amp; GATEWAY</text>
+</svg>

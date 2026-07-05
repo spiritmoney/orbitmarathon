@@ -35,8 +35,13 @@ export function FAQList({
           {groupLabel}
         </p>
       )}
-      <Stagger className="flex flex-col gap-2" stagger={0.06}>
-        <AccordionPrimitive.Root type="single" collapsible defaultValue={defaultOpen}>
+      <Stagger stagger={0.06}>
+        <AccordionPrimitive.Root
+          type="single"
+          collapsible
+          defaultValue={defaultOpen}
+          className="flex flex-col gap-4"
+        >
           {items.map((item, i) => (
             <StaggerItem key={item.question}>
               <AccordionPrimitive.Item

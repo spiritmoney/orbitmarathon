@@ -20,7 +20,8 @@ export default async function RegisterPage({
           Register
         </Heading>
         <Body muted className="mb-8 max-w-lg">
-          Step 1 of 5 — Choose your wave for Orbit Marathon 2026.
+          Step 1 of 5 — Choose your wave. Registration is free; a mandatory official jersey (₦10,000)
+          is purchased at checkout.
         </Body>
         <StepProgress currentStep={1} />
         <WaveSelector defaultWave={params.wave} />

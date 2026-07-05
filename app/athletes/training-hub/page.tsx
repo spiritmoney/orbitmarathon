@@ -15,7 +15,7 @@ export default function TrainingHubPage() {
             Training hub
           </Heading>
           <Body className="text-tint-blue mt-4 max-w-xl">
-            Guides, plans, and tips from coaches and ambassadors for every wave.
+            Downloadable PDF training plans and coach guides for every wave. Ages 18–50.
           </Body>
         </div>
       </section>
@@ -32,6 +32,11 @@ export default function TrainingHubPage() {
             </Heading>
             <Body muted className="mt-2 text-sm">{article.excerpt}</Body>
             <span className="block mt-3 text-xs text-ink/40">{article.readTime} read</span>
+            {article.pdfPath && (
+              <span className="block mt-1 text-xs font-bold uppercase text-sapphire">
+                PDF plan available
+              </span>
+            )}
           </Link>
         ))}
       </div>

@@ -1,6 +1,8 @@
 import { Subheading, Body } from "@/components/tokens";
 import type { Race } from "@/lib/data/races";
 
+export { ElevationProfile, ElevationChart } from "./ElevationProfile";
+
 export function AidStationList({ race }: { race: Race }) {
   return (
     <div>
@@ -25,25 +27,6 @@ export function AidStationList({ race }: { race: Race }) {
           </li>
         ))}
       </ul>
-    </div>
-  );
-}
-
-export function ElevationChart({ race }: { race: Race }) {
-  return (
-    <div className="bg-paper-dim border border-line p-6 h-48 flex items-end gap-1">
-      {Array.from({ length: 20 }).map((_, i) => {
-        const height = 30 + Math.sin(i * 0.5) * 25 + ((i * 7) % 20);
-        return (
-          <div
-            key={i}
-            className="flex-1 bg-gradient-to-t from-deep-blue to-sapphire rounded-t-sm"
-            style={{ height: `${height}%` }}
-            aria-hidden="true"
-          />
-        );
-      })}
-      <span className="sr-only">Elevation profile for {race.name}</span>
     </div>
   );
 }

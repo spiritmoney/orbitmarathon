@@ -12,9 +12,11 @@ import { transition } from "@/lib/motion";
 
 const navLinks = [
   { href: "/the-race", label: "The Race" },
-  { href: "/results", label: "Results" },
-  { href: "/athletes/training-hub", label: "Athletes" },
+  { href: "/awards", label: "Awards" },
   { href: "/partners", label: "Partners" },
+  // { href: "/results", label: "Results" },
+  { href: "/athletes/training-hub", label: "Training" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export function NavBar() {
@@ -46,12 +48,12 @@ export function NavBar() {
               {link.label}
             </Link>
           ))}
-          <Link
+          {/* <Link
             href="/sign-in"
             className="text-[13px] font-semibold uppercase tracking-wide hover:text-volt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun"
           >
             Sign in
-          </Link>
+          </Link> */}
           <Button asChild variant="primary" size="sm">
             <Link href="/register">Register</Link>
           </Button>
