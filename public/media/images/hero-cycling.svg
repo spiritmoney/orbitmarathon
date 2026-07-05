@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Cyclists on Lagos coastal road">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A1B9B"/>
+      <stop offset="100%" stop-color="#283CCD"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38AD02"/>
+      <stop offset="100%" stop-color="#A4E134"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#sky)"/>
+  <polygon points="520,0 800,0 800,1000 280,1000" fill="url(#road)" opacity="0.85"/>
+  <ellipse cx="400" cy="720" rx="280" ry="40" fill="#0D0E1A" opacity="0.25"/>
+  <!-- cyclists -->
+  <g fill="#FBFAF4" opacity="0.95">
+    <circle cx="320" cy="680" r="18"/><rect x="305" y="698" width="30" height="8" rx="2"/>
+    <circle cx="380" cy="670" r="16"/><rect x="367" y="686" width="26" height="7" rx="2"/>
+    <circle cx="440" cy="675" r="17"/><rect x="426" y="692" width="28" height="8" rx="2"/>
+  </g>
+  <text x="40" y="80" fill="#FFDF24" font-family="sans-serif" font-size="14" font-weight="700" letter-spacing="0.12em">COASTAL 180</text>
+  <text x="40" y="920" fill="#DCE1FF" font-family="sans-serif" font-size="12" opacity="0.8">Replace with hero-cycling.jpg</text>
+</svg>
