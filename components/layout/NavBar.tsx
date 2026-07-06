@@ -5,7 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { BoltMark, Wordmark } from "./BrandMark";
+import { Wordmark } from "./BrandMark";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { transition } from "@/lib/motion";
@@ -30,10 +30,7 @@ export function NavBar() {
   return (
     <div className="text-white">
       <div className="max-w-[1180px] mx-auto px-4 md:px-8 py-4 md:py-5 flex items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          <BoltMark />
-          <Wordmark />
-        </div>
+        <Wordmark />
 
         <nav className="hidden md:flex items-center gap-7" aria-label="Main">
           {navLinks.map((link) => (

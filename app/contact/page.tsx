@@ -33,8 +33,7 @@ export default function ContactPage() {
           <div>
             <p className="text-xs font-bold uppercase tracking-wide text-sapphire mb-2">Follow us</p>
             <SocialLinks
-              className="flex-col gap-2"
-              linkClassName="text-ink/80 hover:text-sapphire"
+              linkClassName="text-ink/70 border-ink/15 hover:text-sapphire hover:border-sapphire/30"
             />
           </div>
           <div>

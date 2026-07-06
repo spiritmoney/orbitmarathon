@@ -1,4 +1,5 @@
 import { eventInfo } from "./event";
+import { brandLogos } from "./brand";
 
 export interface Product {
   slug: string;
@@ -18,7 +19,7 @@ export const products: Product[] = [
     currency: "NGN",
     description: "Race-day jersey with Volt Slash side panel. Unisex fit, moisture-wicking fabric.",
     category: "Kit",
-    image: "/images/shop-jersey.jpg",
+    image: brandLogos.full,
   },
   {
     slug: "finisher-medal-display",
@@ -27,7 +28,7 @@ export const products: Product[] = [
     currency: "NGN",
     description: "Wall-mounted display case for your Orbit Marathon finisher medal.",
     category: "Finisher",
-    image: "/images/shop-medal.jpg",
+    image: brandLogos.sapphire,
   },
   {
     slug: "volt-cap",
@@ -36,7 +37,7 @@ export const products: Product[] = [
     currency: "NGN",
     description: "Structured cap with embroidered bolt logo. One size fits all.",
     category: "Apparel",
-    image: "/images/shop-cap.jpg",
+    image: brandLogos.compact,
   },
   {
     slug: "training-tee",
@@ -45,7 +46,7 @@ export const products: Product[] = [
     currency: "NGN",
     description: "Soft cotton training tee with Deep Blue wordmark. Available S–XXL.",
     category: "Apparel",
-    image: "/images/shop-tee.jpg",
+    image: brandLogos.volt,
   },
 ];
 

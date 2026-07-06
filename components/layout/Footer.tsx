@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { BoltMark } from "./BrandMark";
+import Image from "next/image";
+import { brandAlt, brandLogos } from "@/lib/data/brand";
 import { SocialLinks } from "./SocialLinks";
 import { eventInfo } from "@/lib/data/event";
 
@@ -81,7 +82,7 @@ export function Footer() {
         <div className="max-w-[1180px] mx-auto px-4 md:px-8 space-y-5">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-5">
             <div className="space-y-3">
-              <SocialLinks linkClassName="text-[#8a8a96]" />
+              <SocialLinks linkClassName="text-[#8a8a96] border-white/10 hover:text-volt hover:border-volt/40" />
               <p className="text-xs">
                 For more enquiries:{" "}
                 <Link
@@ -95,11 +96,15 @@ export function Footer() {
             <p className="text-xs md:text-right">{eventInfo.dateLabel} · Lagos, Nigeria</p>
           </div>
           <div className="flex flex-col md:flex-row justify-between gap-4 text-xs pt-5 border-t border-white/10">
-            <div className="flex items-center gap-2">
-              <BoltMark className="w-4 h-5" />
-              <span>
-                <strong className="text-white font-bold">Orbit Marathon</strong> — by Orbit Ride & Gateway
-              </span>
+            <div className="flex items-center gap-3">
+              <Image
+                src={brandLogos.white}
+                alt={brandAlt.full}
+                width={140}
+                height={66}
+                className="h-7 w-auto object-contain opacity-90"
+              />
+              <span className="text-[#8a8a96]">by Orbit Ride & Gateway</span>
             </div>
           </div>
         </div>

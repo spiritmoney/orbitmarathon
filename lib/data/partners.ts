@@ -1,3 +1,5 @@
+import { brandLogos } from "./brand";
+
 export interface PartnerBrand {
   id: string;
   name: string;
@@ -27,7 +29,7 @@ export const governmentPartnership = {
       id: "orbit-ride",
       name: "Orbit Ride & Gateway",
       role: "Official event partner",
-      logo: "/media/logos/orbit-ride-gateway.svg",
+      logo: brandLogos.full,
       logoAlt: "Orbit Ride & Gateway logo",
     },
   ] satisfies PartnerBrand[],
@@ -50,7 +52,7 @@ export const partners: SponsorPartner[] = [
   {
     name: "Orbit Ride & Gateway",
     tier: "Official partner",
-    logo: "/media/logos/orbit-ride-gateway.svg",
+    logo: brandLogos.full,
     logoAlt: "Orbit Ride & Gateway",
   },
 ];

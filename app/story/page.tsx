@@ -1,6 +1,7 @@
 import { Hero } from "@/components/marketing/Hero";
 import { SectionHeader } from "@/components/marketing/SectionHeader";
 import { Body } from "@/components/tokens";
+import { BrandLogo } from "@/components/layout/BrandMark";
 import { aboutMarathon, heroStats } from "@/lib/data/event";
 import { storyHighlights } from "@/lib/data/travel";
 import { storyMedia } from "@/lib/data/media";
@@ -22,6 +23,13 @@ export default function StoryPage() {
       />
       <VoltSlash variant="divider" />
       <div className="max-w-[1180px] mx-auto px-4 md:px-8 py-16 space-y-12">
+        <section className="flex flex-col md:flex-row md:items-center gap-8 pb-8 border-b border-line">
+          <BrandLogo variant="full" className="max-w-[300px]" priority />
+          <Body muted className="max-w-xl">
+            The flagship endurance event on the Lagos coastal circuit — delivered by Orbit Ride &
+            Gateway.
+          </Body>
+        </section>
         <section>
           <SectionHeader title="About us" align="left" />
           <Body>{aboutMarathon}</Body>

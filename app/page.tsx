@@ -5,6 +5,7 @@ import { OfficialPartnership } from "@/components/marketing/OfficialPartnership"
 import { PartnerStrip } from "@/components/marketing/PartnerStrip";
 import { NewsTeaser } from "@/components/marketing/NewsTeaser";
 import { MediaShowcase } from "@/components/marketing/MediaShowcase";
+import { HomeSpectatorGallery } from "@/components/marketing/HomeSpectatorGallery";
 import { HomeStory } from "@/components/marketing/HomeStory";
 import { HomeCoursePreview } from "@/components/marketing/HomeCoursePreview";
 import { HomeTravel } from "@/components/marketing/HomeTravel";
@@ -58,6 +59,8 @@ export default function HomePage() {
       </section>
 
       <MediaShowcase items={slideshowMedia} />
+
+      <HomeSpectatorGallery />
 
       <PrizePoolSummary />
 

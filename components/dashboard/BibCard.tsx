@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { Heading } from "@/components/tokens";
+import { brandAlt, brandLogos } from "@/lib/data/brand";
 import { eventInfo } from "@/lib/data/event";
 
 interface BibCardProps {
@@ -9,10 +11,14 @@ interface BibCardProps {
 export function BibCard({ bibNumber, athleteName }: BibCardProps) {
   return (
     <div className="bg-white border-2 border-ink p-6 text-center max-w-xs mx-auto relative">
+      <Image
+        src={brandLogos.full}
+        alt={brandAlt.full}
+        width={140}
+        height={66}
+        className="h-8 w-auto mx-auto mb-4 object-contain"
+      />
       <p className="font-display text-7xl leading-stat text-deep-blue">{bibNumber}</p>
-      <p className="text-[11px] font-extrabold uppercase tracking-widest text-sapphire mt-2">
-        Orbit Marathon
-      </p>
       <p className="font-body font-bold text-sm mt-3">{athleteName}</p>
     </div>
   );

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Teko, Montserrat } from "next/font/google";
 import { SiteChrome } from "@/components/layout/SiteChrome";
+import { brandLogos } from "@/lib/data/brand";
 import { eventInfo } from "@/lib/data/event";
 import "./globals.css";
 
@@ -24,6 +25,11 @@ export const metadata: Metadata = {
     template: "%s | Orbit Marathon",
   },
   description: `Orbit Marathon by Orbit Ride & Gateway — ${eventInfo.dateLabel}, ${eventInfo.routeLabel}. Free registration, mandatory official jersey (₦${eventInfo.jerseyPrice.toLocaleString()}), ₦50M prize pool.`,
+  icons: {
+    icon: brandLogos.compact,
+    shortcut: brandLogos.bolt,
+    apple: brandLogos.bolt,
+  },
 };
 
 export default function RootLayout({

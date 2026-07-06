@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Body, Heading } from "@/components/tokens";
 import { SectionHeader } from "@/components/marketing/SectionHeader";
 import { MediaAsset } from "@/components/media/MediaAsset";
 import { Button } from "@/components/ui/button";
 import { AnimateIn } from "@/components/motion/AnimateIn";
+import { brandAlt, brandLogos } from "@/lib/data/brand";
 import { storyHighlights } from "@/lib/data/travel";
 import type { MediaItem } from "@/lib/data/media";
 
@@ -26,6 +28,13 @@ export function HomeStory({ media }: HomeStoryProps) {
           />
         </AnimateIn>
         <AnimateIn variant="slideFromRight" delay={0.1} className="order-1 md:order-2">
+          <Image
+            src={brandLogos.full}
+            alt={brandAlt.full}
+            width={220}
+            height={104}
+            className="h-10 md:h-12 w-auto mb-5 object-contain object-left"
+          />
           <SectionHeader eyebrow="Orbit Ride & Gateway" title="The Orbit lifestyle" align="left" />
           <Body className="mb-6">{storyHighlights.history}</Body>
           <div className="bg-tint-green border border-forest/20 p-5 mb-6">
