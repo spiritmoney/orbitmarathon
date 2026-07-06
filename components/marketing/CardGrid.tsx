@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { Heading, Body } from "@/components/tokens";
-import { VoltSlash } from "@/components/tokens/VoltSlash";
+import { Heading, Body, CardAccent } from "@/components/tokens";
 import { AnimateIn, Stagger, StaggerItem } from "@/components/motion/AnimateIn";
 import type { Race } from "@/lib/data/races";
 
@@ -25,15 +24,10 @@ function WaveCard({ race }: WaveCardProps) {
     >
       <Link
         href={`/the-race/${race.slug}`}
-        className="group block h-full bg-white border border-line relative overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun transition-shadow hover:shadow-md"
+        className="group block h-full bg-white border border-line relative overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun transition-[box-shadow,border-color] hover:shadow-md hover:border-volt/25"
       >
-        <div className="group-hover:block hidden md:block">
-          <VoltSlash variant="corner" animated />
-        </div>
-        <div className="md:hidden">
-          <VoltSlash variant="corner" />
-        </div>
-        <div className="p-6">
+        <CardAccent />
+        <div className="p-6 pl-7">
           <span className="inline-block text-[10px] font-extrabold uppercase tracking-wide px-2 py-1 rounded-sm bg-paper-dim text-deep-blue mb-3.5">
             {race.tag}
           </span>

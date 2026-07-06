@@ -6,17 +6,22 @@ export const eventInfo = {
   parentBrand: "Orbit Ride & Gateway",
   governmentPartner: "Lagos State Government",
   tagline: "The ultimate expression of the Orbit lifestyle",
-  startDate: "2026-10-05T06:00:00+01:00",
-  endDate: "2026-10-12",
-  dateLabel: "05 — 12 October 2026",
-  location: "Teslim Balogun Stadium, Surulere, Lagos",
+  startDate: "2026-09-05T06:00:00+01:00",
+  endDate: "2026-09-07",
+  dateLabel: "5 — 7 September 2026",
+  startLocation: "Oniru Stadium, Lagos",
+  finishLocation: "Teslim Balogun Stadium, Surulere, Lagos",
+  routeLabel: "Oniru Stadium → Teslim Balogun Stadium",
+  location: "Oniru Stadium to Teslim Balogun Stadium, Lagos",
   registrationFee: 0,
-  jerseyPrice: 10_000,
+  jerseyPrice: 20_000,
   jerseySizes: ["S", "M", "L", "XL", "XXL"] as const,
   ageMin: 18,
   ageMax: 50,
   whatsapp: "+234 708 340 4918",
   whatsappLink: "https://wa.me/2347083404918",
+  phone: "+234 708 340 4918",
+  phoneLink: "tel:+2347083404918",
   email: "hello@orbitmarathon.com",
   pressEmail: "press@orbitmarathon.com",
   /** kg CO2 estimated saved per runner vs. driving to the start line */
@@ -24,6 +29,24 @@ export const eventInfo = {
   /** Seed count for Green Mile counter until live registration API is connected */
   registeredRunners: 1247,
 };
+
+export const socialLinks = [
+  {
+    platform: "Facebook",
+    label: "Orbit Marathon",
+    href: "https://www.facebook.com/OrbitMarathon",
+  },
+  {
+    platform: "Instagram",
+    label: "Orbit Marathon",
+    href: "https://www.instagram.com/orbitmarathon",
+  },
+  {
+    platform: "TikTok",
+    label: "Orbit Marathon",
+    href: "https://www.tiktok.com/@orbitmarathon",
+  },
+] as const;
 
 export const aboutMarathon = `The Orbit Marathon is the ultimate expression of the Orbit lifestyle — formally approved by the Lagos State Government and delivered in partnership with Orbit Ride & Gateway. Together, we are combining public endorsement with innovative mobility expertise to achieve a landmark endurance event for Lagos. Whether you are a seasoned elite athlete or a weekend warrior, this is your platform to showcase endurance, community spirit, and the Nigerian drive for excellence.`;
 

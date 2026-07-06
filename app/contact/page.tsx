@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Heading, Body, Eyebrow } from "@/components/tokens";
 import { ContactForm } from "@/components/content/ContactForm";
+import { SocialLinks } from "@/components/layout/SocialLinks";
 import { eventInfo } from "@/lib/data/event";
 import { Button } from "@/components/ui/button";
 
@@ -30,6 +31,21 @@ export default function ContactPage() {
         <ContactForm />
         <div className="space-y-6">
           <div>
+            <p className="text-xs font-bold uppercase tracking-wide text-sapphire mb-2">Follow us</p>
+            <SocialLinks
+              className="flex-col gap-2"
+              linkClassName="text-ink/80 hover:text-sapphire"
+            />
+          </div>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wide text-sapphire">For more enquiries</p>
+            <Body>
+              <Link href={eventInfo.phoneLink} className="text-sapphire hover:text-deep-blue">
+                Call {eventInfo.phone}
+              </Link>
+            </Body>
+          </div>
+          <div>
             <p className="text-xs font-bold uppercase tracking-wide text-sapphire">WhatsApp</p>
             <Body>
               <Link href={eventInfo.whatsappLink} className="text-sapphire hover:text-deep-blue">
@@ -48,15 +64,19 @@ export default function ContactPage() {
           <div>
             <p className="text-xs font-bold uppercase tracking-wide text-sapphire">Location</p>
             <Body muted>
-              Teslim Balogun Stadium
+              Start: {eventInfo.startLocation}
               <br />
-              Surulere, Lagos, Nigeria
+              Finish: {eventInfo.finishLocation}
             </Body>
+          </div>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wide text-sapphire">Dates</p>
+            <Body muted>{eventInfo.dateLabel}</Body>
           </div>
           <div>
             <p className="text-xs font-bold uppercase tracking-wide text-sapphire">FAQ</p>
             <Body muted className="text-sm">
-              Age limit 18–50 · Free registration · ₦10,000 mandatory jersey · Medical teams every
+              Age limit 18–50 · Free registration · ₦{eventInfo.jerseyPrice.toLocaleString()} mandatory jersey · Medical teams every
               2km
             </Body>
             <Link href="/faq" className="text-sm text-sapphire font-bold uppercase mt-2 inline-block hover:text-deep-blue">

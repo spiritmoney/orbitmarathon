@@ -1,4 +1,5 @@
 import { Heading } from "@/components/tokens";
+import { eventInfo } from "@/lib/data/event";
 
 interface BibCardProps {
   bibNumber: string;
@@ -19,10 +20,10 @@ export function BibCard({ bibNumber, athleteName }: BibCardProps) {
 
 export function ScheduleList() {
   const items = [
-    { date: "04 Oct", event: "Packet pickup opens", location: "Teslim Balogun Stadium" },
-    { date: "05 Oct", event: "Coastal 180 start", location: "06:00 WAT" },
-    { date: "05 Oct", event: "Marathon 42 start", location: "06:30 WAT" },
-    { date: "05 Oct", event: "Award ceremony", location: "Stadium, 18:00 WAT" },
+    { date: "04 Sep", event: "Packet pickup opens", location: eventInfo.startLocation },
+    { date: "05 Sep", event: "Coastal 180 start", location: "06:00 WAT · Oniru Stadium" },
+    { date: "05 Sep", event: "Marathon 42 start", location: "06:30 WAT · Oniru Stadium" },
+    { date: "07 Sep", event: "Award ceremony", location: eventInfo.finishLocation },
   ];
 
   return (

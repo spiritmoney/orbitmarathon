@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Heading, Body } from "@/components/tokens";
+import { Heading, Body, CardAccent } from "@/components/tokens";
 import { Button } from "@/components/ui/button";
 import { getProductBySlug, products } from "@/lib/data/shop";
 
@@ -29,12 +29,8 @@ export default async function ProductPage({
 
   return (
     <div className="max-w-[1180px] mx-auto px-4 md:px-8 py-12 grid md:grid-cols-2 gap-10">
-      <div className="aspect-square bg-paper-dim border border-line relative">
-        <div
-          className="absolute top-0 right-0 w-16 h-16 bg-volt"
-          style={{ clipPath: "polygon(100% 0, 0 0, 100% 100%)" }}
-          aria-hidden="true"
-        />
+      <div className="group aspect-square bg-paper-dim border border-line relative overflow-hidden">
+        <CardAccent variant="frame" />
         <div className="absolute inset-0 flex items-center justify-center font-display text-6xl text-ink/10">
           {product.category}
         </div>

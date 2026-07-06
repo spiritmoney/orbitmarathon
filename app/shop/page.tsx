@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Heading, Body, Eyebrow } from "@/components/tokens";
+import { Heading, Body, Eyebrow, CardAccent } from "@/components/tokens";
 import { products } from "@/lib/data/shop";
 
 export const metadata = { title: "Shop" };
@@ -23,14 +23,10 @@ export default function ShopPage() {
           <Link
             key={product.slug}
             href={`/shop/${product.slug}`}
-            className="block bg-white border border-line overflow-hidden hover:border-sapphire focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun group"
+            className="block bg-white border border-line overflow-hidden hover:border-volt/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun group transition-[border-color]"
           >
-            <div className="aspect-square bg-paper-dim relative">
-              <div
-                className="absolute top-0 right-0 w-12 h-12 bg-volt"
-                style={{ clipPath: "polygon(100% 0, 0 0, 100% 100%)" }}
-                aria-hidden="true"
-              />
+            <div className="aspect-square bg-paper-dim relative overflow-hidden">
+              <CardAccent variant="frame" />
               <div className="absolute inset-0 flex items-center justify-center font-display text-4xl text-ink/10 uppercase">
                 {product.category}
               </div>

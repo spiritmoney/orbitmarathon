@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Bus, MapPin, Plane } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Body, Eyebrow, Heading } from "@/components/tokens";
+import { CardAccent } from "@/components/tokens/CardAccent";
 import { VoltSlash } from "@/components/tokens/VoltSlash";
 import { Button } from "@/components/ui/button";
 import { AnimateIn, Stagger, StaggerItem } from "@/components/motion/AnimateIn";
@@ -96,14 +97,9 @@ export function HomeTravel() {
                   <motion.article
                     whileHover={reducedMotion ? undefined : { y: -4 }}
                     transition={transition.fast}
-                    className="group relative h-full bg-white border border-line p-5 overflow-hidden transition-shadow hover:shadow-md hover:border-sapphire/30"
+                    className="group relative h-full bg-white border border-line p-5 pl-6 overflow-hidden transition-[box-shadow,border-color] hover:shadow-md hover:border-volt/25"
                   >
-                    <div className="hidden sm:block">
-                      <VoltSlash variant="corner" animated />
-                    </div>
-                    <div className="sm:hidden">
-                      <VoltSlash variant="corner" />
-                    </div>
+                    <CardAccent />
                     <p className="text-[10px] font-extrabold uppercase tracking-wide text-sapphire">
                       {hotel.area}
                     </p>

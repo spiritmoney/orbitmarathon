@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Teko, Montserrat } from "next/font/google";
 import { SiteChrome } from "@/components/layout/SiteChrome";
+import { eventInfo } from "@/lib/data/event";
 import "./globals.css";
 
 const teko = Teko({
@@ -22,8 +23,7 @@ export const metadata: Metadata = {
     default: "Orbit Marathon — Lagos City Cycling Marathon",
     template: "%s | Orbit Marathon",
   },
-  description:
-    "Orbit Marathon by Orbit Ride & Gateway — free registration, mandatory official jersey, ₦50M prize pool. Coastal 180, Marathon 42, and Duo Orbit in Lagos.",
+  description: `Orbit Marathon by Orbit Ride & Gateway — ${eventInfo.dateLabel}, ${eventInfo.routeLabel}. Free registration, mandatory official jersey (₦${eventInfo.jerseyPrice.toLocaleString()}), ₦50M prize pool.`,
 };
 
 export default function RootLayout({

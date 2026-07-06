@@ -4,3 +4,4 @@ export { Body } from "./Body";
 export { Stat } from "./Stat";
 export { Eyebrow } from "./Eyebrow";
 export { VoltSlash } from "./VoltSlash";
+export { CardAccent } from "./CardAccent";

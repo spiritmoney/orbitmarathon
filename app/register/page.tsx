@@ -1,6 +1,7 @@
 import { Heading, Body } from "@/components/tokens";
 import { StepProgress } from "@/components/commerce/StepProgress";
 import { WaveSelector } from "@/components/commerce/WaveSelector";
+import { eventInfo } from "@/lib/data/event";
 
 export const metadata = {
   title: "Register",
@@ -20,7 +21,8 @@ export default async function RegisterPage({
           Register
         </Heading>
         <Body muted className="mb-8 max-w-lg">
-          Step 1 of 5 — Choose your wave. Registration is free; a mandatory official jersey (₦10,000)
+          Step 1 of 5 — Choose your wave. Registration is free; a mandatory official jersey (₦
+          {eventInfo.jerseyPrice.toLocaleString()})
           is purchased at checkout.
         </Body>
         <StepProgress currentStep={1} />

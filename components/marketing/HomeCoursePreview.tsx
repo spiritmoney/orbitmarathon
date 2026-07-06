@@ -5,6 +5,7 @@ import { SectionHeader } from "@/components/marketing/SectionHeader";
 import { MediaAsset } from "@/components/media/MediaAsset";
 import { Button } from "@/components/ui/button";
 import { AnimateIn } from "@/components/motion/AnimateIn";
+import { eventInfo } from "@/lib/data/event";
 import type { MediaItem } from "@/lib/data/media";
 
 interface HomeCoursePreviewProps {
@@ -19,7 +20,7 @@ export function HomeCoursePreview({ media }: HomeCoursePreviewProps) {
           <SectionHeader
             eyebrow="The course"
             title="One circuit, two disciplines"
-            description="Closed coastal roads from Victoria Island through Epe, finishing at Teslim Balogun Stadium."
+            description={`Closed coastal roads on the ${eventInfo.routeLabel} route.`}
             align="left"
           />
           <ul className="space-y-2 mb-6">

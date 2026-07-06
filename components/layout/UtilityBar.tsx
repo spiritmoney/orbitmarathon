@@ -6,7 +6,13 @@ export function UtilityBar() {
     <div className="text-[#9a9aa6] py-2 px-4 md:px-8">
       <div className="max-w-[1180px] mx-auto flex justify-between text-[10px] font-bold uppercase tracking-widest">
         <span>EN · {eventInfo.parentBrand}</span>
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
+          <Link
+            href={eventInfo.phoneLink}
+            className="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun"
+          >
+            Call
+          </Link>
           <Link
             href={eventInfo.whatsappLink}
             target="_blank"

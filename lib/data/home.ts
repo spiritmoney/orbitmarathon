@@ -1,3 +1,7 @@
+import { eventInfo } from "./event";
+
+const jerseyPrice = `₦${eventInfo.jerseyPrice.toLocaleString()}`;
+
 /** Top questions surfaced on the home page — full list lives on /faq */
 export const homeFaqItems = [
   {
@@ -7,8 +11,7 @@ export const homeFaqItems = [
   },
   {
     question: "What is included in the race kit?",
-    answer:
-      "Your kit includes a personalized race bib, timing chip, and a mandatory official Orbit Marathon jersey (₦10,000). Registration itself is free.",
+    answer: `Your kit includes a personalized race bib, timing chip, and a mandatory official Orbit Marathon jersey (${jerseyPrice}). Registration itself is free.`,
   },
   {
     question: "What medical support is on course?",
@@ -17,7 +20,6 @@ export const homeFaqItems = [
   },
   {
     question: "How do I register?",
-    answer:
-      "Registration is free. Select your wave, choose your jersey size, and complete checkout for the required ₦10,000 official jersey via Paystack or Flutterwave.",
+    answer: `Registration is free. Select your wave, choose your jersey size, and complete checkout for the required ${jerseyPrice} official jersey via Paystack or Flutterwave.`,
   },
 ];

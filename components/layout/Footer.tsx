@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { BoltMark, Wordmark } from "./BrandMark";
+import { BoltMark } from "./BrandMark";
+import { SocialLinks } from "./SocialLinks";
+import { eventInfo } from "@/lib/data/event";
 
 const footerColumns = [
   {
@@ -76,14 +78,30 @@ export function Footer() {
         </div>
       </div>
       <div className="bg-ink text-[#8a8a96] py-8">
-        <div className="max-w-[1180px] mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between gap-4 text-xs">
-          <div className="flex items-center gap-2">
-            <BoltMark className="w-4 h-5" />
-            <span>
-              <strong className="text-white font-bold">Orbit Marathon</strong> — by Orbit Ride & Gateway
-            </span>
+        <div className="max-w-[1180px] mx-auto px-4 md:px-8 space-y-5">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-5">
+            <div className="space-y-3">
+              <SocialLinks linkClassName="text-[#8a8a96]" />
+              <p className="text-xs">
+                For more enquiries:{" "}
+                <Link
+                  href={eventInfo.phoneLink}
+                  className="text-white font-semibold hover:text-volt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun"
+                >
+                  call {eventInfo.phone}
+                </Link>
+              </p>
+            </div>
+            <p className="text-xs md:text-right">{eventInfo.dateLabel} · Lagos, Nigeria</p>
           </div>
-          <p>05–12 October 2026 · Lagos, Nigeria</p>
+          <div className="flex flex-col md:flex-row justify-between gap-4 text-xs pt-5 border-t border-white/10">
+            <div className="flex items-center gap-2">
+              <BoltMark className="w-4 h-5" />
+              <span>
+                <strong className="text-white font-bold">Orbit Marathon</strong> — by Orbit Ride & Gateway
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Play, ImageIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { CardAccent } from "@/components/tokens/CardAccent";
 import type { MediaItem } from "@/lib/data/media";
 
 interface MediaAssetProps {
@@ -87,11 +88,7 @@ export function MediaAsset({
             )}
           </>
         )}
-        <div
-          className="absolute top-0 right-0 w-12 h-12 bg-volt opacity-90 pointer-events-none z-10"
-          style={{ clipPath: "polygon(100% 0, 0 0, 100% 100%)" }}
-          aria-hidden="true"
-        />
+        <CardAccent variant="frame" className="z-10" />
       </div>
       {showCaption && item.caption && (
         <figcaption className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-ink/80 to-transparent px-4 py-3 pointer-events-none">

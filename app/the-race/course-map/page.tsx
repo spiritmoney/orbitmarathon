@@ -5,6 +5,7 @@ import { ElevationProfile } from "@/components/race-detail/ElevationProfile";
 import { AidStationList } from "@/components/race-detail/AidStationList";
 import { Button } from "@/components/ui/button";
 import { races } from "@/lib/data/races";
+import { eventInfo } from "@/lib/data/event";
 
 export const metadata = { title: "Course map" };
 
@@ -18,8 +19,8 @@ export default function CourseMapPage() {
             Course map & elevation
           </Heading>
           <Body className="text-tint-blue mt-4 max-w-2xl">
-            Interactive maps for all three waves. Download GPX files, explore aid stations, and
-            review elevation profiles for the Lagos coastal circuit.
+            Interactive maps for all three waves on the {eventInfo.routeLabel} route. Download GPX
+            files, explore aid stations, and review elevation profiles.
           </Body>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import type { WaveId } from "@/lib/registration-store";
+import { eventInfo } from "./event";
 
 export interface Race {
   id: WaveId;
@@ -32,7 +33,7 @@ export const races: Race[] = [
     price: 0,
     currency: "NGN",
     highlights: [
-      "Closed roads from Victoria Island to Epe",
+      `Closed roads on the ${eventInfo.routeLabel} route`,
       "Rolling coastal elevation profile",
       "Professional chip timing throughout",
     ],
@@ -59,7 +60,7 @@ export const races: Race[] = [
     name: "Marathon 42",
     tag: "Elite wave",
     description:
-      "Standard marathon distance, flat and fast, finishing inside the Teslim Balogun Stadium.",
+      "Standard marathon distance, flat and fast, from Oniru Stadium to a stadium finish at Teslim Balogun.",
     distance: "42.2 km",
     elevation: "210 m gain",
     cutoff: "6 hours",
@@ -72,7 +73,7 @@ export const races: Race[] = [
       "Stadium finish with live crowd",
     ],
     aidStations: [
-      { km: 5, name: "VI Start", services: ["Water", "Electrolytes"] },
+      { km: 5, name: "Oniru Stadium", services: ["Water", "Electrolytes"] },
       { km: 10, name: "Lekki Bridge", services: ["Water", "Gels"] },
       { km: 15, name: "Maroko", services: ["Water", "Food", "Medical"] },
       { km: 21.1, name: "Halfway", services: ["Full aid station", "Medical"] },

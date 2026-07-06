@@ -21,10 +21,10 @@ export const trainingArticles: TrainingArticle[] = [
   {
     slug: "marathon-heat-acclimation",
     title: "Heat Acclimation for Lagos",
-    excerpt: "How to prepare your body for October race conditions in West Africa.",
+    excerpt: "How to prepare your body for September race conditions in West Africa.",
     readTime: "6 min",
     category: "Running",
-    body: "Lagos in October averages 31°C with high humidity. Start heat acclimation at least 14 days before race day.\n\nIncorporate easy runs in warm conditions, increase electrolyte intake, and practice your race-day hydration plan during long runs.",
+    body: "Lagos in September averages 29°C with high humidity. Start heat acclimation at least 14 days before race day.\n\nIncorporate easy runs in warm conditions, increase electrolyte intake, and practice your race-day hydration plan during long runs.",
     pdfPath: "/media/plans/marathon-heat-plan.pdf",
   },
   {

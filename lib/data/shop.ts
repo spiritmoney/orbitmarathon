@@ -1,3 +1,5 @@
+import { eventInfo } from "./event";
+
 export interface Product {
   slug: string;
   name: string;
@@ -12,7 +14,7 @@ export const products: Product[] = [
   {
     slug: "official-jersey-2026",
     name: "Official 2026 Jersey",
-    price: 25000,
+    price: eventInfo.jerseyPrice,
     currency: "NGN",
     description: "Race-day jersey with Volt Slash side panel. Unisex fit, moisture-wicking fabric.",
     category: "Kit",

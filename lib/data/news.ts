@@ -14,7 +14,7 @@ export const newsArticles: NewsArticle[] = [
     excerpt: "Early bird pricing available until August 31. Secure your spot on the Lagos coastal circuit.",
     date: "2026-06-15",
     category: "Announcement",
-    body: "Orbit Marathon returns to Lagos this October with three waves: Coastal 180, Marathon 42, and Duo Orbit relay. Early bird registration is now open with reduced entry fees across all categories.\n\nAthletes registering before August 31 receive a 15% discount and priority wave selection. The event expects over 12,000 participants from six continents.\n\nRegister now to secure your bib number and access the athlete dashboard for training resources and race-day logistics.",
+    body: "Orbit Marathon returns to Lagos on 5–7 September with three waves: Coastal 180, Marathon 42, and Duo Orbit relay. Registration is free; a mandatory official jersey secures your spot.\n\nAthletes registering before August 15 receive priority wave selection. The route runs from Oniru Stadium to Teslim Balogun Stadium.\n\nRegister now to secure your bib number and access the athlete dashboard for training resources and race-day logistics.",
   },
   {
     slug: "course-map-updated",
@@ -22,7 +22,7 @@ export const newsArticles: NewsArticle[] = [
     excerpt: "Updated elevation profile and aid station locations now available for download.",
     date: "2026-05-28",
     category: "Course",
-    body: "The official 2026 course map is now live. Key changes include an extended coastal section through Epe and a redesigned stadium finish for the marathon leg.\n\nDownload the GPX files from the course map page or view the interactive elevation chart on each race detail page.",
+    body: "The official 2026 course map is now live. The route runs from Oniru Stadium to Teslim Balogun Stadium, with updated aid station placements along the coastal leg.\n\nDownload the GPX files from the course map page or view the interactive elevation chart on each race detail page.",
   },
   {
     slug: "partner-spotlight-lagos-hotels",

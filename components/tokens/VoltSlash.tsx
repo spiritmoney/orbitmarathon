@@ -1,22 +1,21 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion, useReducedMotion } from "framer-motion";
+import { CardAccent } from "@/components/tokens/CardAccent";
 
 type VoltSlashVariant = "divider" | "corner" | "mask" | "underline";
 
 interface VoltSlashProps {
   variant?: VoltSlashVariant;
   className?: string;
+  /** @deprecated Corner accent no longer animates on hover */
   animated?: boolean;
 }
 
 export function VoltSlash({
   variant = "divider",
   className,
-  animated = false,
 }: VoltSlashProps) {
-  const reducedMotion = useReducedMotion();
 
   if (variant === "divider") {
     return (
@@ -40,30 +39,7 @@ export function VoltSlash({
   }
 
   if (variant === "corner") {
-    const content = (
-      <div
-        className={cn(
-          "absolute top-0 right-0 w-[70px] h-[70px] bg-volt",
-          className,
-        )}
-        style={{ clipPath: "polygon(100% 0, 0 0, 100% 100%)" }}
-        aria-hidden="true"
-      />
-    );
-
-    if (animated && !reducedMotion) {
-      return (
-        <motion.div
-          className="absolute top-0 right-0 w-[70px] h-[70px] overflow-hidden"
-          whileHover={{ scale: 1.08 }}
-          transition={{ duration: 0.2 }}
-        >
-          {content}
-        </motion.div>
-      );
-    }
-
-    return content;
+    return <CardAccent variant="frame" className={className} />;
   }
 
   if (variant === "mask") {

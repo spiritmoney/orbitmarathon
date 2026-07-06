@@ -1,3 +1,5 @@
+import { eventInfo } from "./event";
+
 export interface FAQItem {
   question: string;
   answer: string;
@@ -8,6 +10,8 @@ export interface FAQCategory {
   title: string;
   items: FAQItem[];
 }
+
+const jerseyPrice = `₦${eventInfo.jerseyPrice.toLocaleString()}`;
 
 export const faqCategories: FAQCategory[] = [
   {
@@ -20,7 +24,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "What is included in the race kit?",
-        answer: "Your race kit includes a personalized race bib, timing chip, and a mandatory official Orbit Marathon jersey (₦10,000). Registration is free; the jersey purchase is required to secure your spot.",
+        answer: `Your race kit includes a personalized race bib, timing chip, and a mandatory official Orbit Marathon jersey (${jerseyPrice}). Registration is free; the jersey purchase is required to secure your spot.`,
       },
       {
         question: "What medical support is provided?",
@@ -32,7 +36,7 @@ export const faqCategories: FAQCategory[] = [
       },
       {
         question: "Where is the start line?",
-        answer: "All waves start from Teslim Balogun Stadium, Surulere, Lagos. Shuttle services run from partner hotels from 04:00.",
+        answer: `All waves start at ${eventInfo.startLocation} and finish at ${eventInfo.finishLocation}. Shuttle services run from partner hotels from 04:00.`,
       },
       {
         question: "What happens if I miss the cutoff?",
@@ -46,15 +50,15 @@ export const faqCategories: FAQCategory[] = [
     items: [
       {
         question: "How much does registration cost?",
-        answer: "Registration is free. A mandatory official Orbit Marathon jersey (₦10,000) is required at checkout. Pay via card, bank transfer, or Orbit Gateway for Fast Track bib collection.",
+        answer: `Registration is free. A mandatory official Orbit Marathon jersey (${jerseyPrice}) is required at checkout. Pay via card, bank transfer, or Orbit Gateway for Fast Track bib collection.`,
       },
       {
         question: "Can I change my wave after registering?",
-        answer: "Wave changes are permitted until September 15, subject to availability. Contact support with your registration ID.",
+        answer: "Wave changes are permitted until August 15, subject to availability. Contact support with your registration ID.",
       },
       {
         question: "Is registration refundable?",
-        answer: "Full refunds are available until August 1. After that, 50% credit toward next year's event is offered until September 1.",
+        answer: "Full refunds are available until July 1. After that, 50% credit toward next year's event is offered until August 1.",
       },
       {
         question: "How do I register a Duo Orbit team?",

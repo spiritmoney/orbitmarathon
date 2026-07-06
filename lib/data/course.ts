@@ -27,12 +27,12 @@ export interface CourseDefinition {
   osmBbox: [number, number, number, number];
 }
 
-/** Shared coastal circuit geometry — VI → Lekki → Epe → Stadium */
+/** Shared coastal circuit — Oniru Stadium → Teslim Balogun Stadium */
 const coastalRoutePath =
   "M 48 355 C 120 280, 180 300, 240 240 S 400 160, 520 120 S 680 90, 720 75";
 
 const coastalLandmarks: MapLandmark[] = [
-  { id: "start", name: "Teslim Balogun Stadium", km: 0, x: 6, y: 79, type: "start" },
+  { id: "start", name: "Oniru Stadium", km: 0, x: 6, y: 79, type: "start" },
   { id: "lekki", name: "Lekki Checkpoint", km: 20, x: 18, y: 68, type: "aid" },
   { id: "ajah", name: "Ajah Village", km: 40, x: 28, y: 62, type: "aid" },
   { id: "badagry", name: "Badagry Turn", km: 60, x: 38, y: 55, type: "aid" },
@@ -41,7 +41,7 @@ const coastalLandmarks: MapLandmark[] = [
   { id: "epe", name: "Epe Gate", km: 120, x: 68, y: 32, type: "aid" },
   { id: "final", name: "Final Push", km: 140, x: 78, y: 26, type: "aid" },
   { id: "stadium-approach", name: "Stadium Approach", km: 160, x: 86, y: 20, type: "aid" },
-  { id: "finish", name: "Stadium Finish", km: 180, x: 90, y: 17, type: "finish" },
+  { id: "finish", name: "Teslim Balogun Stadium", km: 180, x: 90, y: 17, type: "finish" },
 ];
 
 const coastalElevation: ElevationPoint[] = [
@@ -67,14 +67,14 @@ const coastalElevation: ElevationPoint[] = [
 ];
 
 const marathonLandmarks: MapLandmark[] = [
-  { id: "start", name: "VI Start", km: 0, x: 6, y: 79, type: "start" },
+  { id: "start", name: "Oniru Stadium", km: 0, x: 6, y: 79, type: "start" },
   { id: "lekki-bridge", name: "Lekki Bridge", km: 10, x: 14, y: 72, type: "aid" },
   { id: "maroko", name: "Maroko", km: 15, x: 18, y: 68, type: "aid" },
   { id: "halfway", name: "Halfway", km: 21.1, x: 24, y: 62, type: "aid" },
   { id: "ikoyi", name: "Ikoyi Loop", km: 30, x: 32, y: 56, type: "aid" },
   { id: "final7", name: "Final 7", km: 35, x: 38, y: 52, type: "aid" },
   { id: "stadium-gate", name: "Stadium Gate", km: 40, x: 44, y: 48, type: "aid" },
-  { id: "finish", name: "Stadium Finish", km: 42.2, x: 48, y: 45, type: "finish" },
+  { id: "finish", name: "Teslim Balogun Stadium", km: 42.2, x: 48, y: 45, type: "finish" },
 ];
 
 const marathonRoutePath =

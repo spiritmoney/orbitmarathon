@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { CardAccent } from "@/components/tokens/CardAccent";
 import { transition } from "@/lib/motion";
 import type { MediaCategory, MediaItem } from "@/lib/data/media";
 
@@ -178,11 +179,7 @@ export function MediaSlideshow({
               />
             )}
 
-            <div
-              className="absolute top-0 right-0 w-14 h-14 bg-volt/90 z-10"
-              style={{ clipPath: "polygon(100% 0, 0 0, 100% 100%)" }}
-              aria-hidden="true"
-            />
+            <CardAccent variant="frame" className="z-10" />
 
             {/* Slide caption — sits above bottom controls in fullBleed */}
             {!fullBleed && (

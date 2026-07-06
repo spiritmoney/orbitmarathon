@@ -37,7 +37,7 @@ export const slideshowMedia: MediaItem[] = [
     type: "image",
     src: "/media/images/hero-cycling.avif",
     alt: "Road cyclists on the Lagos coastal circuit",
-    caption: "Coastal 180 · Lekki to Epe",
+    caption: "Oniru Stadium → Teslim Balogun Stadium",
     category: "Cycling",
   },
   {
