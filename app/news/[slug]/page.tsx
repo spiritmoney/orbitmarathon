@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { ArticleBody } from "@/components/content/ArticleBody";
 import { getArticleBySlug, newsArticles } from "@/lib/data/news";
+import { createPageMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return newsArticles.map((a) => ({ slug: a.slug }));
@@ -15,7 +16,13 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
-  return { title: article?.title ?? "News" };
+  if (!article) return { title: "News" };
+  return createPageMetadata({
+    title: article.title,
+    description: article.excerpt,
+    path: `/news/${slug}`,
+    type: "article",
+  });
 }
 
 export default async function NewsArticlePage({

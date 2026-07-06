@@ -2,7 +2,13 @@ import { Heading, Body } from "@/components/tokens";
 import { StepProgress } from "@/components/commerce/StepProgress";
 import { DetailsForm } from "@/components/commerce/DetailsForm";
 
-export const metadata = { title: "Athlete details" };
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Athlete details",
+  path: "/register/details",
+  noIndex: true,
+});
 
 export default function RegisterDetailsPage() {
   return (

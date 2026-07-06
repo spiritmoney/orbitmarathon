@@ -2,7 +2,13 @@ import { Heading, Body } from "@/components/tokens";
 import { StepProgress } from "@/components/commerce/StepProgress";
 import { PaymentForm } from "@/components/commerce/PaymentForm";
 
-export const metadata = { title: "Payment" };
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Payment",
+  path: "/register/payment",
+  noIndex: true,
+});
 
 export default function RegisterPaymentPage() {
   return (

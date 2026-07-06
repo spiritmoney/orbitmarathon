@@ -1,7 +1,13 @@
 import { FAQAccordion } from "@/components/content/FAQAccordion";
 import { faqCategories } from "@/lib/data/faq";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = { title: "FAQ" };
+export const metadata = createPageMetadata({
+  title: "FAQ",
+  description:
+    "Registration, race day, travel, and kit FAQs for Orbit Marathon Lagos — ages 18–50, free registration, official jersey required.",
+  path: "/faq",
+});
 
 export default function FAQPage() {
   return (

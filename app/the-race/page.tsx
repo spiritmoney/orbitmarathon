@@ -4,8 +4,14 @@ import { CardGrid } from "@/components/marketing/CardGrid";
 import { SectionHeader } from "@/components/marketing/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { races } from "@/lib/data/races";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = { title: "The Race" };
+export const metadata = createPageMetadata({
+  title: "The Race",
+  description:
+    "Coastal 180, Marathon 42, and Duo Orbit — three waves on one Lagos coastal circuit from Oniru Stadium to Teslim Balogun Stadium.",
+  path: "/the-race",
+});
 
 export default function TheRacePage() {
   return (

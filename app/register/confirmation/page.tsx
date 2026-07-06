@@ -2,7 +2,13 @@ import { Heading, Body } from "@/components/tokens";
 import { StepProgress } from "@/components/commerce/StepProgress";
 import { ConfirmationView } from "@/components/commerce/ConfirmationView";
 
-export const metadata = { title: "Confirmation" };
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Confirmation",
+  path: "/register/confirmation",
+  noIndex: true,
+});
 
 export default function RegisterConfirmationPage() {
   return (

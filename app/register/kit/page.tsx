@@ -3,7 +3,13 @@ import { StepProgress } from "@/components/commerce/StepProgress";
 import { KitForm } from "@/components/commerce/KitForm";
 import { eventInfo } from "@/lib/data/event";
 
-export const metadata = { title: "Kit & add-ons" };
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Kit & add-ons",
+  path: "/register/kit",
+  noIndex: true,
+});
 
 export default function RegisterKitPage() {
   return (

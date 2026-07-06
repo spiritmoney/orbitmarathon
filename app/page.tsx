@@ -14,6 +14,7 @@ import { HomeCountdown } from "@/components/marketing/HomeCountdown";
 import { PrizePoolSummary } from "@/components/marketing/PrizePoolSummary";
 import { RegisterCTA } from "@/components/marketing/RegisterCTA";
 import { AnimateIn } from "@/components/motion/AnimateIn";
+import { createPageMetadata } from "@/lib/seo";
 import { eventInfo, heroStats } from "@/lib/data/event";
 import { races } from "@/lib/data/races";
 import { newsArticles } from "@/lib/data/news";
@@ -23,6 +24,12 @@ import {
   storyMedia,
   courseMedia,
 } from "@/lib/data/media";
+
+export const metadata = createPageMetadata({
+  path: "/",
+  description:
+    "Orbit Marathon in Lagos — free registration, ₦50M prizes, Coastal 180, Marathon 42 & Duo Orbit. 5–7 September 2026, Oniru Stadium to Teslim Balogun Stadium. Spectators welcome.",
+});
 
 export default function HomePage() {
   return (

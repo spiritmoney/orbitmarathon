@@ -1,7 +1,12 @@
 import { Heading } from "@/components/tokens";
 import { BibCard, ScheduleList, DocumentList } from "@/components/dashboard/BibCard";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = { title: "Dashboard" };
+export const metadata = createPageMetadata({
+  title: "Dashboard",
+  path: "/athletes/dashboard",
+  noIndex: true,
+});
 
 export default function DashboardPage() {
   return (

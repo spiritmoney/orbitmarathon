@@ -1,6 +1,11 @@
 import { SignInForm } from "@/components/content/SignInForm";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = { title: "Sign in" };
+export const metadata = createPageMetadata({
+  title: "Sign in",
+  path: "/sign-in",
+  noIndex: true,
+});
 
 export default async function SignInPage({
   searchParams,

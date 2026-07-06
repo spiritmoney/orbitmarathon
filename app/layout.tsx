@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Teko, Montserrat } from "next/font/google";
 import { SiteChrome } from "@/components/layout/SiteChrome";
-import { brandLogos } from "@/lib/data/brand";
-import { eventInfo } from "@/lib/data/event";
+import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
+import { rootMetadata } from "@/lib/seo";
 import "./globals.css";
 
 const teko = Teko({
@@ -19,18 +19,7 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Orbit Marathon — Lagos City Cycling Marathon",
-    template: "%s | Orbit Marathon",
-  },
-  description: `Orbit Marathon by Orbit Ride & Gateway — ${eventInfo.dateLabel}, ${eventInfo.routeLabel}. Free registration, mandatory official jersey (₦${eventInfo.jerseyPrice.toLocaleString()}), ₦50M prize pool.`,
-  icons: {
-    icon: brandLogos.compact,
-    shortcut: brandLogos.bolt,
-    apple: brandLogos.bolt,
-  },
-};
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({
   children,
@@ -43,6 +32,7 @@ export default function RootLayout({
       className={`${teko.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-body bg-paper text-ink">
+        <SiteJsonLd />
         <SiteChrome>{children}</SiteChrome>
       </body>
     </html>

@@ -2,10 +2,13 @@ import { Heading, Body } from "@/components/tokens";
 import { StepProgress } from "@/components/commerce/StepProgress";
 import { WaveSelector } from "@/components/commerce/WaveSelector";
 import { eventInfo } from "@/lib/data/event";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "Register",
-};
+  description: `Register for Orbit Marathon — free entry, mandatory official jersey (₦${eventInfo.jerseyPrice.toLocaleString()}). Choose Coastal 180, Marathon 42, or Duo Orbit.`,
+  path: "/register",
+});
 
 export default async function RegisterPage({
   searchParams,
