@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Heading, Body, Eyebrow } from "@/components/tokens";
 import { SectionHeader } from "@/components/marketing/SectionHeader";
 import { travelHighlights, travelHotels, travelSteps } from "@/lib/data/travel";
@@ -7,8 +8,19 @@ export const metadata = { title: "Travel & stay" };
 export default function TravelPage() {
   return (
     <>
-      <section className="bg-deep-blue text-white py-16">
-        <div className="max-w-[1180px] mx-auto px-4 md:px-8">
+      <section className="relative bg-deep-blue text-white py-16 overflow-hidden">
+        <div className="absolute inset-0" aria-hidden="true">
+          <Image
+            src={travelHighlights.heroImage}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/80 to-ink/55" />
+        </div>
+        <div className="relative z-10 max-w-[1180px] mx-auto px-4 md:px-8">
           <Eyebrow variant="sun">Plan your trip</Eyebrow>
           <Heading as="h1" size="lg" className="text-white mt-2">
             Travel & stay
@@ -17,6 +29,7 @@ export default function TravelPage() {
             Getting to Lagos, partner hotels, and local guides for race week.
           </Body>
         </div>
+        <span className="sr-only">{travelHighlights.heroImageAlt}</span>
       </section>
       <div className="max-w-[1180px] mx-auto px-4 md:px-8 py-12 space-y-12">
         <section>

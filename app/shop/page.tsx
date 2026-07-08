@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Heading, Body, Eyebrow, CardAccent } from "@/components/tokens";
+import { Heading, Body, Eyebrow } from "@/components/tokens";
 import { products } from "@/lib/data/shop";
 
 export const metadata = { title: "Shop" };
@@ -26,13 +26,12 @@ export default function ShopPage() {
             href={`/shop/${product.slug}`}
             className="block bg-white border border-line overflow-hidden hover:border-volt/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun group transition-[border-color]"
           >
-            <div className="aspect-square bg-paper-dim relative overflow-hidden p-6">
-              <CardAccent variant="frame" />
+            <div className="aspect-square bg-paper-dim relative overflow-hidden">
               <Image
                 src={product.image}
-                alt={product.name}
+                alt={product.imageAlt}
                 fill
-                className="object-contain p-4"
+                className="object-cover"
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
             </div>

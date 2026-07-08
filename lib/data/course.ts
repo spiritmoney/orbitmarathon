@@ -16,15 +16,58 @@ export interface MapLandmark {
 
 export interface CourseDefinition {
   waveId: WaveId;
-  /** SVG path for the route overlay */
+  /** @deprecated schematic overlay — retained for elevation/chart data only */
   routePath: string;
   gpxUrl: string;
   maxKm: number;
   elevationGain: number;
   landmarks: MapLandmark[];
   elevation: ElevationPoint[];
-  /** OpenStreetMap embed bbox: minLon, minLat, maxLon, maxLat */
-  osmBbox: [number, number, number, number];
+}
+
+export const courseRoute = {
+  start: {
+    lat: 6.4281,
+    lng: 3.4219,
+    label: "Oniru Stadium, Victoria Island, Lagos",
+  },
+  finish: {
+    lat: 6.4965,
+    lng: 3.3428,
+    label: "Teslim Balogun Stadium, Surulere, Lagos",
+  },
+} as const;
+
+export type GoogleTravelMode = "bicycling" | "walking" | "driving";
+
+const travelModeFlag: Record<GoogleTravelMode, string> = {
+  bicycling: "b",
+  walking: "w",
+  driving: "d",
+};
+
+export function googleMapsTravelMode(waveId: WaveId): GoogleTravelMode {
+  return waveId === "marathon-42" ? "walking" : "bicycling";
+}
+
+/** Google Maps directions embed — uses Embed API when `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is set */
+export function googleMapsEmbedUrl(travelMode: GoogleTravelMode): string {
+  const key = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  const { start, finish } = courseRoute;
+
+  if (key) {
+    return `https://www.google.com/maps/embed/v1/directions?key=${key}&origin=${encodeURIComponent(start.label)}&destination=${encodeURIComponent(finish.label)}&mode=${travelMode}`;
+  }
+
+  const saddr = encodeURIComponent(start.label);
+  const daddr = encodeURIComponent(finish.label);
+  const dirflg = travelModeFlag[travelMode];
+  return `https://maps.google.com/maps?saddr=${saddr}&daddr=${daddr}&dirflg=${dirflg}&hl=en&z=11&output=embed`;
+}
+
+export function googleMapsExternalUrl(travelMode: GoogleTravelMode): string {
+  const { start, finish } = courseRoute;
+  return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(start.label)}&destination=${encodeURIComponent(finish.label)}&travelmode=${travelMode}`;
 }
 
 /** Shared coastal circuit — Oniru Stadium → Teslim Balogun Stadium */
@@ -102,7 +145,6 @@ export const courses: CourseDefinition[] = [
     elevationGain: 1340,
     landmarks: coastalLandmarks,
     elevation: coastalElevation,
-    osmBbox: [3.35, 6.35, 4.05, 6.65],
   },
   {
     waveId: "marathon-42",
@@ -112,7 +154,6 @@ export const courses: CourseDefinition[] = [
     elevationGain: 210,
     landmarks: marathonLandmarks,
     elevation: marathonElevation,
-    osmBbox: [3.38, 6.40, 3.55, 6.50],
   },
   {
     waveId: "duo-orbit",
@@ -131,7 +172,6 @@ export const courses: CourseDefinition[] = [
       { km: 90, elevation: 142 },
       ...marathonElevation.slice(4),
     ],
-    osmBbox: [3.35, 6.35, 4.05, 6.65],
   },
 ];
 
@@ -140,12 +180,3 @@ export function getCourseByWave(waveId: WaveId): CourseDefinition | undefined {
 }
 
 export const defaultCourseWave: WaveId = "coastal-180";
-
-export function osmEmbedUrl(bbox: [number, number, number, number]): string {
-  const [minLon, minLat, maxLon, maxLat] = bbox;
-  return `https://www.openstreetmap.org/export/embed.html?bbox=${minLon}%2C${minLat}%2C${maxLon}%2C${maxLat}&layer=mapnik&marker=6.4541%2C3.3947`;
-}
-
-export function osmExternalUrl(): string {
-  return "https://www.openstreetmap.org/#map=11/6.4541/3.5247";
-}

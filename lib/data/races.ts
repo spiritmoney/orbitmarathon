@@ -1,5 +1,6 @@
 import type { WaveId } from "@/lib/registration-store";
 import { eventInfo } from "./event";
+import { siteImages } from "./images";
 
 export interface Race {
   id: WaveId;
@@ -16,6 +17,8 @@ export interface Race {
   highlights: string[];
   aidStations: { km: number; name: string; services: string[] }[];
   rules: { title: string; content: string }[];
+  heroImage: string;
+  heroImageAlt: string;
 }
 
 export const races: Race[] = [
@@ -32,6 +35,8 @@ export const races: Race[] = [
     startTime: "06:00 WAT",
     price: 0,
     currency: "NGN",
+    heroImage: siteImages.cyclingPeloton,
+    heroImageAlt: "Peloton of cyclists during Orbit Marathon",
     highlights: [
       `Closed roads on the ${eventInfo.routeLabel} route`,
       "Rolling coastal elevation profile",
@@ -67,6 +72,8 @@ export const races: Race[] = [
     startTime: "06:30 WAT",
     price: 0,
     currency: "NGN",
+    heroImage: siteImages.lagosCityMarathon,
+    heroImageAlt: "Elite marathon runners on the Lagos city course",
     highlights: [
       "IAAF-certified course",
       "Flat coastal route optimized for PBs",
@@ -101,6 +108,8 @@ export const races: Race[] = [
     startTime: "06:00 WAT",
     price: 0,
     currency: "NGN",
+    heroImage: siteImages.cyclingSprint,
+    heroImageAlt: "Cyclists sprinting in a tight road race finish",
     highlights: [
       "Two athletes, one finish line",
       "Synchronized hand-off zone",

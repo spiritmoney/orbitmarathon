@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { Heading, Body, CardAccent } from "@/components/tokens";
 import { AnimateIn, Stagger, StaggerItem } from "@/components/motion/AnimateIn";
@@ -26,6 +27,15 @@ function WaveCard({ race }: WaveCardProps) {
         href={`/the-race/${race.slug}`}
         className="group block h-full bg-white border border-line relative overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun transition-[box-shadow,border-color] hover:shadow-md hover:border-volt/25"
       >
+        <div className="relative aspect-[16/10] bg-paper-dim">
+          <Image
+            src={race.heroImage}
+            alt={race.heroImageAlt}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        </div>
         <CardAccent />
         <div className="p-6 pl-7">
           <span className="inline-block text-[10px] font-extrabold uppercase tracking-wide px-2 py-1 rounded-sm bg-paper-dim text-deep-blue mb-3.5">

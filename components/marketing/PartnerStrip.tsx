@@ -17,7 +17,7 @@ function buildMarqueeSequence() {
 }
 
 function PartnerLogoItem({ partner }: { partner: SponsorPartner }) {
-  const isCoatOfArms = partner.name === "Lagos State Government";
+  const isBadge = partner.logoVariant === "badge";
 
   if (partner.logo) {
     return (
@@ -26,7 +26,7 @@ function PartnerLogoItem({ partner }: { partner: SponsorPartner }) {
           "relative shrink-0 transition-all duration-300 ease-out",
           "opacity-100 scale-100",
           "hover:scale-125 hover:z-10",
-          isCoatOfArms ? "h-16 md:h-20 w-16 md:w-20" : "h-12 md:h-14 w-[130px] md:w-[160px]",
+          isBadge ? "h-20 md:h-24 w-18 md:w-20" : "h-14 md:h-16 w-[150px] md:w-[180px]",
         )}
       >
         <Image

@@ -1,5 +1,5 @@
 import { eventInfo } from "./event";
-import { brandLogos } from "./brand";
+import { siteImages } from "./images";
 
 export interface Product {
   slug: string;
@@ -9,6 +9,7 @@ export interface Product {
   description: string;
   category: string;
   image: string;
+  imageAlt: string;
 }
 
 export const products: Product[] = [
@@ -19,7 +20,8 @@ export const products: Product[] = [
     currency: "NGN",
     description: "Race-day jersey with Volt Slash side panel. Unisex fit, moisture-wicking fabric.",
     category: "Kit",
-    image: brandLogos.full,
+    image: siteImages.cyclingPeloton,
+    imageAlt: "Cyclists in race kit during a road peloton",
   },
   {
     slug: "finisher-medal-display",
@@ -28,7 +30,8 @@ export const products: Product[] = [
     currency: "NGN",
     description: "Wall-mounted display case for your Orbit Marathon finisher medal.",
     category: "Finisher",
-    image: brandLogos.sapphire,
+    image: siteImages.cyclistVictory,
+    imageAlt: "Athlete celebrating at the finish line",
   },
   {
     slug: "volt-cap",
@@ -37,7 +40,8 @@ export const products: Product[] = [
     currency: "NGN",
     description: "Structured cap with embroidered bolt logo. One size fits all.",
     category: "Apparel",
-    image: brandLogos.compact,
+    image: siteImages.cyclistCloseup,
+    imageAlt: "Cyclist wearing professional race kit and helmet",
   },
   {
     slug: "training-tee",
@@ -46,7 +50,8 @@ export const products: Product[] = [
     currency: "NGN",
     description: "Soft cotton training tee with Deep Blue wordmark. Available S–XXL.",
     category: "Apparel",
-    image: brandLogos.volt,
+    image: siteImages.lagosCityMarathon,
+    imageAlt: "Marathon runners on the Lagos city course",
   },
 ];
 

@@ -1,15 +1,28 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Heading, Body, Eyebrow } from "@/components/tokens";
 import { Button } from "@/components/ui/button";
 import { prizePool } from "@/lib/data/awards";
+import { siteImages } from "@/lib/data/images";
 
 export const metadata = { title: "Awards & prizes" };
 
 export default function AwardsPage() {
   return (
     <>
-      <section className="bg-deep-blue text-white py-16">
-        <div className="max-w-[1180px] mx-auto px-4 md:px-8">
+      <section className="relative bg-deep-blue text-white py-16 overflow-hidden">
+        <div className="absolute inset-0" aria-hidden="true">
+          <Image
+            src={siteImages.cyclistVictory}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/85 to-ink/60" />
+        </div>
+        <div className="relative z-10 max-w-[1180px] mx-auto px-4 md:px-8">
           <Eyebrow variant="sun">Competition</Eyebrow>
           <Heading as="h1" size="lg" className="text-white mt-2">
             Awards & prize pool
@@ -19,6 +32,9 @@ export default function AwardsPage() {
             <strong className="text-white">₦{prizePool.total.toLocaleString()}</strong>.
           </Body>
         </div>
+        <span className="sr-only">
+          Marathon runner celebrating victory with arms raised at the finish line
+        </span>
       </section>
 
       <div className="max-w-[1180px] mx-auto px-4 md:px-8 py-12 space-y-12">

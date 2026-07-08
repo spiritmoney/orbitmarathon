@@ -1,3 +1,5 @@
+import { siteImages } from "./images";
+
 export interface TravelHotel {
   name: string;
   perk: string;
@@ -17,6 +19,8 @@ export const travelHighlights = {
   shuttle: "Partner shuttles from airport and hotels from 04:00 on race day",
   guide: "Victoria Island & Lekki — bike shops, recovery spots, and restaurants",
   discount: "Use your registration code for partner rates",
+  heroImage: siteImages.lagosCity,
+  heroImageAlt: "Lagos city and coastal views during race week",
 };
 
 export const travelSteps: TravelStep[] = [

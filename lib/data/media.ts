@@ -1,3 +1,5 @@
+import { siteImages } from "./images";
+
 export type MediaType = "image" | "video";
 
 export type MediaCategory = "Lagos" | "Stadium" | "Cycling";
@@ -16,18 +18,18 @@ export interface MediaItem {
 export const heroMedia: MediaItem = {
   id: "hero",
   type: "image",
-  src: "/media/images/hero-cycling.avif",
+  src: siteImages.heroCycling,
   alt: "Cyclists riding the Lagos coastal circuit",
   caption: "Coastal 180 · Lagos, Nigeria",
   category: "Cycling",
 };
 
-/** In motion slideshow — Lagos, stadium, and cycling */
+/** In motion slideshow — mix of legacy and new photography */
 export const slideshowMedia: MediaItem[] = [
   {
     id: "slide-victory",
     type: "image",
-    src: "/media/images/cyclist-victory.png",
+    src: siteImages.cyclistVictory,
     alt: "Cyclist celebrating at the finish line with arms raised",
     caption: "Cross the line · Make history",
     category: "Cycling",
@@ -35,15 +37,15 @@ export const slideshowMedia: MediaItem[] = [
   {
     id: "slide-cycling-coastal",
     type: "image",
-    src: "/media/images/hero-cycling.avif",
+    src: siteImages.heroCycling,
     alt: "Road cyclists on the Lagos coastal circuit",
     caption: "Oniru Stadium → Teslim Balogun Stadium",
     category: "Cycling",
   },
   {
-    id: "slide-lagos-download",
+    id: "slide-lagos-week",
     type: "image",
-    src: "/download.avif",
+    src: siteImages.lagosRaceWeek,
     alt: "Lagos city and coastal views during race week",
     caption: "Lagos · Race week",
     category: "Lagos",
@@ -51,7 +53,7 @@ export const slideshowMedia: MediaItem[] = [
   {
     id: "slide-peloton",
     type: "image",
-    src: "/media/images/cycling-peloton.avif",
+    src: siteImages.cyclingPeloton,
     alt: "Peloton of cyclists during Orbit Marathon",
     caption: "Race day peloton",
     category: "Cycling",
@@ -59,17 +61,16 @@ export const slideshowMedia: MediaItem[] = [
   {
     id: "slide-stadium",
     type: "image",
-    src: "/media/images/stadium-finish.svg",
-    alt: "Teslim Balogun Stadium finish line",
+    src: siteImages.teslimBalogunAerial,
+    alt: "Aerial view of Teslim Balogun Stadium in Surulere, Lagos",
     caption: "Teslim Balogun Stadium · Surulere",
     category: "Stadium",
   },
   {
-    id: "slide-coastal-clip",
-    type: "video",
-    src: "/media/clips/coastal-ride.mp4",
-    poster: "/media/images/cyclist-victory.png",
-    alt: "Cyclists riding along the Lagos coastline",
+    id: "slide-crowd-cheer",
+    type: "image",
+    src: siteImages.crowdCheerCyclists,
+    alt: "Spectators cheering riders along the race route",
     caption: "Coastal circuit · In motion",
     category: "Cycling",
   },
@@ -81,7 +82,7 @@ export const galleryMedia = slideshowMedia;
 export const storyMedia: MediaItem = {
   id: "story",
   type: "image",
-  src: "/media/images/cyclist-victory.png",
+  src: siteImages.cyclistVictory,
   alt: "Cyclist celebrating victory at the finish line with arms raised",
   caption: "Cross the line · Make history",
   category: "Cycling",
@@ -90,7 +91,7 @@ export const storyMedia: MediaItem = {
 export const courseMedia: MediaItem = {
   id: "course",
   type: "image",
-  src: "/media/images/hero-cycling.avif",
+  src: siteImages.heroCycling,
   alt: "Orbit Marathon cyclists on the Lagos coastal route",
   caption: "180km ride · 42.2km run · one circuit",
   category: "Cycling",

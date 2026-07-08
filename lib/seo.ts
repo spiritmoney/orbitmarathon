@@ -33,7 +33,9 @@ export const defaultKeywords = [
   "free marathon registration Nigeria",
 ].join(", ");
 
-export const defaultOgImage = "/media/images/cyclist-victory.png";
+import { siteImages } from "@/lib/data/images";
+
+export const defaultOgImage = siteImages.cyclistVictory;
 
 export function absoluteUrl(path: string): string {
   if (path.startsWith("http")) return path;

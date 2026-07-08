@@ -43,6 +43,8 @@ export default async function TrainingArticlePage({
         date="2026-06-01"
         category={article.category}
         body={article.body}
+        image={article.coverImage}
+        imageAlt={article.coverAlt}
       />
     </div>
   );

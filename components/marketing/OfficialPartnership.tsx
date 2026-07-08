@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Body, Heading, Eyebrow } from "@/components/tokens";
 import { PartnerLogo } from "@/components/marketing/PartnerLogo";
 import { AnimateIn } from "@/components/motion/AnimateIn";
@@ -10,17 +11,44 @@ interface OfficialPartnershipProps {
   variant?: "default" | "compact";
 }
 
+/** Fixed height keeps title/role lines aligned; logos scale up inside via object-contain */
+const logoSlotClass =
+  "relative h-40 md:h-44 w-full max-w-[280px] mx-auto shrink-0";
+
+const titleClass =
+  "min-h-[2.75rem] md:min-h-[3rem] flex items-center justify-center font-body text-sm font-bold text-ink leading-snug px-1";
+
+const roleClass =
+  "min-h-[2rem] flex items-start justify-center text-[10px] font-bold uppercase tracking-widest text-sapphire leading-relaxed px-1";
+
 export function OfficialPartnership({ variant = "default" }: OfficialPartnershipProps) {
-  const [lagos, orbit] = governmentPartnership.brands;
+  const brands = governmentPartnership.brands;
 
   if (variant === "compact") {
     return (
       <div className="flex flex-wrap items-center gap-6 md:gap-10 py-4">
-        <PartnerLogo src={lagos.logo} alt={lagos.logoAlt} className="h-10 md:h-12 w-[120px] md:w-[150px]" />
-        <span className="text-ink/20 font-display text-2xl" aria-hidden="true">×</span>
-        <PartnerLogo src={orbit.logo} alt={orbit.logoAlt} className="h-10 md:h-12 w-[130px] md:w-[160px]" />
+        {brands.map((brand, index) => (
+          <span key={brand.id} className="contents">
+            {index > 0 && (
+              <span className="text-ink/20 font-display text-2xl" aria-hidden="true">
+                ×
+              </span>
+            )}
+            <PartnerLogo
+              src={brand.logo}
+              alt={brand.logoAlt}
+              className={
+                brand.id === "orbit-ride"
+                  ? "h-12 md:h-14 w-[160px] md:w-[200px]"
+                  : brand.id === "lssc"
+                    ? "h-16 md:h-20 w-14 md:w-16"
+                    : "h-14 md:h-16 w-[140px] md:w-[160px]"
+              }
+            />
+          </span>
+        ))}
         <Body muted className="text-xs max-w-xs">
-          Approved by Lagos State Government · In partnership with Orbit Ride & Gateway
+          Approved by Lagos State Government · LSSC · Orbit Ride & Gateway
         </Body>
       </div>
     );
@@ -38,43 +66,28 @@ export function OfficialPartnership({ variant = "default" }: OfficialPartnership
         </AnimateIn>
 
         <AnimateIn delay={0.08}>
-          <div className="grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-8 items-stretch max-w-4xl mx-auto">
-            <article className="bg-paper-dim border border-line p-6 md:p-8 flex flex-col items-center text-center">
-              <PartnerLogo
-                src={lagos.logo}
-                alt={lagos.logoAlt}
-                className="h-28 md:h-32 w-28 md:w-32 mx-auto [&_img]:object-contain [&_img]:object-center"
-                priority
-              />
-              <p className="mt-5 font-body text-sm font-bold text-ink">{lagos.name}</p>
-              <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-sapphire">
-                {lagos.role}
-              </p>
-            </article>
-
-            <div
-              className="hidden md:flex flex-col items-center justify-center px-2"
-              aria-hidden="true"
-            >
-              <div className="w-px h-full min-h-[120px] bg-line relative">
-                <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 font-display text-2xl text-ink/25">
-                  ×
-                </span>
-              </div>
-            </div>
-
-            <article className="bg-paper-dim border border-line p-6 md:p-8 flex flex-col items-center text-center">
-              <PartnerLogo
-                src={orbit.logo}
-                alt={orbit.logoAlt}
-                className="h-16 md:h-20 w-[200px] md:w-[220px] mx-auto [&_img]:object-center"
-                priority
-              />
-              <p className="mt-5 font-body text-sm font-bold text-ink">{orbit.name}</p>
-              <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-sapphire">
-                {orbit.role}
-              </p>
-            </article>
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 items-stretch max-w-5xl mx-auto">
+            {brands.map((brand) => (
+              <article
+                key={brand.id}
+                className="bg-paper-dim border border-line p-6 md:p-8 flex h-full flex-col items-center text-center"
+              >
+                <div className={logoSlotClass}>
+                  <Image
+                    src={brand.logo}
+                    alt={brand.logoAlt}
+                    fill
+                    className="object-contain object-center"
+                    sizes="280px"
+                    priority
+                  />
+                </div>
+                <div className="mt-5 flex w-full flex-col items-center">
+                  <p className={titleClass}>{brand.name}</p>
+                  <p className={roleClass}>{brand.role}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </AnimateIn>
 

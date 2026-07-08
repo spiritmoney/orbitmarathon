@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { SectionHeader } from "./SectionHeader";
 import { Body, Eyebrow, Heading } from "@/components/tokens";
@@ -34,8 +35,18 @@ export function NewsTeaser({ articles }: NewsTeaserProps) {
               >
                 <Link
                   href={`/news/${article.slug}`}
-                  className="block h-full bg-white border border-line p-6 hover:border-sapphire transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun"
+                  className="block h-full bg-white border border-line overflow-hidden hover:border-sapphire transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun"
                 >
+                  <div className="relative aspect-[16/10] bg-paper-dim">
+                    <Image
+                      src={article.image}
+                      alt={article.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6">
                   <Eyebrow>{article.category}</Eyebrow>
                   <Heading as="h3" size="md" className="mt-2 normal-case text-2xl">
                     {article.title}
@@ -48,6 +59,7 @@ export function NewsTeaser({ articles }: NewsTeaserProps) {
                       year: "numeric",
                     })}
                   </time>
+                  </div>
                 </Link>
               </motion.div>
             </StaggerItem>

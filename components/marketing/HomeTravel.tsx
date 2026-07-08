@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Bus, MapPin, Plane } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Body, Eyebrow, Heading } from "@/components/tokens";
@@ -33,7 +34,17 @@ export function HomeTravel() {
 
         <div className="grid lg:grid-cols-[1fr_1.15fr] gap-6 lg:gap-8">
           {/* Left: journey steps */}
-          <AnimateIn variant="slideFromLeft" className="relative bg-deep-blue text-white p-6 md:p-8 lg:p-10 overflow-hidden">
+          <AnimateIn variant="slideFromLeft" className="relative bg-deep-blue text-white p-6 md:p-8 lg:p-10 overflow-hidden min-h-[320px]">
+            <div className="absolute inset-0" aria-hidden="true">
+              <Image
+                src={travelHighlights.heroImage}
+                alt=""
+                fill
+                className="object-cover object-center opacity-35"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-deep-blue/80" />
+            </div>
             <VoltSlash variant="mask" className="opacity-30 right-0 w-[280px]" />
             <div className="relative z-10">
               <p className="text-[10px] font-extrabold uppercase tracking-widest text-sun mb-6">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Heading, Body, Eyebrow } from "@/components/tokens";
 import { newsArticles } from "@/lib/data/news";
 
@@ -21,13 +22,24 @@ export default function NewsPage() {
           <Link
             key={article.slug}
             href={`/news/${article.slug}`}
-            className="block bg-white border border-line p-6 hover:border-sapphire focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun"
+            className="block bg-white border border-line overflow-hidden hover:border-sapphire focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun"
           >
-            <Eyebrow>{article.category}</Eyebrow>
-            <Heading as="h2" size="md" className="mt-2 normal-case text-xl">
-              {article.title}
-            </Heading>
-            <Body muted className="mt-2 text-sm">{article.excerpt}</Body>
+            <div className="relative aspect-[16/10] bg-paper-dim">
+              <Image
+                src={article.image}
+                alt={article.imageAlt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="p-6">
+              <Eyebrow>{article.category}</Eyebrow>
+              <Heading as="h2" size="md" className="mt-2 normal-case text-xl">
+                {article.title}
+              </Heading>
+              <Body muted className="mt-2 text-sm">{article.excerpt}</Body>
+            </div>
           </Link>
         ))}
       </div>

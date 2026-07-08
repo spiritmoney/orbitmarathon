@@ -22,6 +22,7 @@ export async function generateMetadata({
     description: article.excerpt,
     path: `/news/${slug}`,
     type: "article",
+    image: article.image,
   });
 }
 
@@ -41,6 +42,8 @@ export default async function NewsArticlePage({
         date={article.date}
         category={article.category}
         body={article.body}
+        image={article.image}
+        imageAlt={article.imageAlt}
       />
     </div>
   );

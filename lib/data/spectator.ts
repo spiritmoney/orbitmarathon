@@ -1,3 +1,5 @@
+import { siteImages } from "./images";
+
 export interface SpectatorGalleryItem {
   id: string;
   src: string;
@@ -22,36 +24,36 @@ export const spectatorIntro = {
 export const spectatorGallery: SpectatorGalleryItem[] = [
   {
     id: "lagos-week",
-    src: "/download.avif",
+    src: siteImages.lagosRaceWeek,
     alt: "Lagos city views during race week",
     caption: "Race week across Lagos",
     layout: "tall",
   },
   {
     id: "stadium",
-    src: "/media/images/stadium-finish.svg",
-    alt: "Teslim Balogun Stadium finish line",
+    src: siteImages.teslimBalogunAerial,
+    alt: "Teslim Balogun Stadium finish line and fan zone",
     caption: "Stadium finish · Fan zone",
     layout: "square",
   },
   {
     id: "celebration",
-    src: "/media/images/cyclist-victory.png",
+    src: siteImages.cyclistVictory,
     alt: "Athlete celebrating at the finish line",
     caption: "Cheer at the finish",
     layout: "square",
   },
   {
     id: "coast",
-    src: "/media/images/hero-cycling.avif",
-    alt: "Athletes on the coastal route with crowds nearby",
+    src: siteImages.lekkiCoastal,
+    alt: "Lagos coastal corridor with city and shoreline views",
     caption: "Energy along the route",
     layout: "wide",
   },
   {
     id: "community",
-    src: "/media/images/community-start.svg",
-    alt: "Community gathered at the start area",
+    src: siteImages.marathonStart,
+    alt: "Thousands of runners gathered at a major marathon start line",
     caption: "Community at the start",
     layout: "square",
   },

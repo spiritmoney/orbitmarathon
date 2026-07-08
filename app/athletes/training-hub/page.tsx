@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Heading, Body, Eyebrow } from "@/components/tokens";
 import { trainingArticles } from "@/lib/data/training";
 
@@ -24,19 +25,30 @@ export default function TrainingHubPage() {
           <Link
             key={article.slug}
             href={`/athletes/training-hub/${article.slug}`}
-            className="block bg-white border border-line p-6 hover:border-sapphire focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun"
+            className="block bg-white border border-line overflow-hidden hover:border-sapphire focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sun"
           >
-            <Eyebrow>{article.category}</Eyebrow>
-            <Heading as="h2" size="md" className="mt-2 normal-case text-xl">
-              {article.title}
-            </Heading>
-            <Body muted className="mt-2 text-sm">{article.excerpt}</Body>
-            <span className="block mt-3 text-xs text-ink/40">{article.readTime} read</span>
-            {article.pdfPath && (
-              <span className="block mt-1 text-xs font-bold uppercase text-sapphire">
-                PDF plan available
-              </span>
-            )}
+            <div className="relative aspect-[16/10] bg-paper-dim">
+              <Image
+                src={article.coverImage}
+                alt={article.coverAlt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="p-6">
+              <Eyebrow>{article.category}</Eyebrow>
+              <Heading as="h2" size="md" className="mt-2 normal-case text-xl">
+                {article.title}
+              </Heading>
+              <Body muted className="mt-2 text-sm">{article.excerpt}</Body>
+              <span className="block mt-3 text-xs text-ink/40">{article.readTime} read</span>
+              {article.pdfPath && (
+                <span className="block mt-1 text-xs font-bold uppercase text-sapphire">
+                  PDF plan available
+                </span>
+              )}
+            </div>
           </Link>
         ))}
       </div>

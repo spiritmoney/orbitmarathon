@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Heading, Body, CardAccent } from "@/components/tokens";
+import { Heading, Body } from "@/components/tokens";
 import { Button } from "@/components/ui/button";
 import { getProductBySlug, products } from "@/lib/data/shop";
 
@@ -30,13 +30,12 @@ export default async function ProductPage({
 
   return (
     <div className="max-w-[1180px] mx-auto px-4 md:px-8 py-12 grid md:grid-cols-2 gap-10">
-      <div className="group aspect-square bg-paper-dim border border-line relative overflow-hidden p-8">
-        <CardAccent variant="frame" />
+      <div className="aspect-square bg-paper-dim border border-line relative overflow-hidden">
         <Image
           src={product.image}
-          alt={product.name}
+          alt={product.imageAlt}
           fill
-          className="object-contain p-6"
+          className="object-cover"
           sizes="(max-width: 768px) 100vw, 50vw"
           priority
         />
